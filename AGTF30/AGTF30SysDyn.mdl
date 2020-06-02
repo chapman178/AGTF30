@@ -7,7 +7,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.666"
+    ComputedModelVersion    "1.674"
     NumModelReferences	    1
     ModelReference {
       ModelRefBlockPath	      "AGTF30SysDyn/EngineSystem/EngineDW/Engine Model|AGTF30_eng"
@@ -32,7 +32,7 @@ Model {
       $ObjectID		      2
       $ClassName	      "Simulink.WindowInfo"
       IsActive		      [1]
-      Location		      [350.0, 182.0, 1347.0, 773.0]
+      Location		      [224.0, 170.0, 1519.0, 857.0]
       Object {
 	$PropName		"ModelBrowserInfo"
 	$ObjectID		3
@@ -54,11 +54,11 @@ Model {
 	$ObjectID		5
 	$ClassName		"Simulink.EditorInfo"
 	IsActive		[1]
-	ViewObjType		"SimulinkTopLevel"
-	LoadSaveID		"0"
-	Extents			[1295.0, 571.0]
-	ZoomFactor		[1.0]
-	Offset			[216.14531182587405, 71.717993347084757]
+	ViewObjType		"SimulinkSubsys"
+	LoadSaveID		"81"
+	Extents			[1467.0, 655.0]
+	ZoomFactor		[1.75]
+	Offset			[1139.5885281385288, 1176.4891774891773]
       }
     }
   }
@@ -68,9 +68,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "jwchapm2"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Fri May 29 16:26:14 2020"
-  RTWModifiedTimeStamp	  512670365
-  ModelVersionFormat	  "1.%<AutoIncrement:666>"
+  LastModifiedDate	  "Tue Jun 02 11:15:38 2020"
+  RTWModifiedTimeStamp	  512997334
+  ModelVersionFormat	  "1.%<AutoIncrement:674>"
   ConfigurationManager	  "none"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -1218,8 +1218,8 @@ Model {
   }
   System {
     Name		    "AGTF30SysDyn"
-    Location		    [350, 182, 1697, 955]
-    Open		    on
+    Location		    [123, 18, 1642, 875]
+    Open		    off
     ModelBrowserVisibility  off
     ModelBrowserWidth	    200
     ScreenColor		    "white"
@@ -1230,9 +1230,9 @@ Model {
     TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
     TiledPageScale	    1
     ShowPageBoundaries	    off
-    ZoomFactor		    "100"
+    ZoomFactor		    "66"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    "1192"
+    SIDHighWatermark	    "1206"
     Block {
       BlockType		      SubSystem
       Name		      "Actuators"
@@ -1243,7 +1243,7 @@ Model {
       RequestExecContextInheritance off
       System {
 	Name			"Actuators"
-	Location		[350, 182, 1697, 955]
+	Location		[251, 55, 1770, 912]
 	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
@@ -1255,12 +1255,12 @@ Model {
 	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
 	TiledPageScale		1
 	ShowPageBoundaries	off
-	ZoomFactor		"201"
+	ZoomFactor		"200"
 	Block {
 	  BlockType		  Inport
 	  Name			  "DMD"
 	  SID			  "209"
-	  Position		  [20, 118, 50, 132]
+	  Position		  [20, 153, 50, 167]
 	  ZOrder		  892
 	  IconDisplay		  "Port number"
 	}
@@ -1268,11 +1268,10 @@ Model {
 	  BlockType		  BusCreator
 	  Name			  "Bus\nCreator"
 	  SID			  "207"
-	  Ports			  [3, 1]
-	  Position		  [510, 27, 515, 223]
+	  Ports			  [4, 1]
+	  Position		  [510, 27, 515, 288]
 	  ZOrder		  891
 	  ShowName		  off
-	  Inputs		  "3"
 	  DisplayOption		  "bar"
 	  Port {
 	    PortNumber		    1
@@ -1285,11 +1284,11 @@ Model {
 	  BlockType		  BusSelector
 	  Name			  "Bus\nSelector1"
 	  SID			  "206"
-	  Ports			  [1, 3]
-	  Position		  [125, 25, 130, 225]
+	  Ports			  [1, 4]
+	  Position		  [125, 25, 130, 290]
 	  ZOrder		  890
 	  ShowName		  off
-	  OutputSignals		  "Wfdmd,VBVdmd,VAFNdmd"
+	  OutputSignals		  "Wfdmd,VBVdmd,VAFNdmd,Scalars"
 	  Port {
 	    PortNumber		    1
 	    Name		    "<Wfdmd>"
@@ -1305,6 +1304,12 @@ Model {
 	  Port {
 	    PortNumber		    3
 	    Name		    "<VAFNdmd>"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	  Port {
+	    PortNumber		    4
+	    Name		    "<Scalars>"
 	    RTWStorageClass	    "Auto"
 	    DataLoggingNameMode	    "SignalName"
 	  }
@@ -1369,7 +1374,7 @@ Model {
 	      IC_M		      "MWS.In.WfIC"
 	      MaxSat_M		      "MWS.Act.FMV.max"
 	      MinSat_M		      "MWS.Act.FMV.min"
-	      deadband_M	      0.0
+	      deadband_M	      "0.0"
 	      rateLimit_M	      "MWS.Act.FMV.rateLimit"
 	    }
 	    Block {
@@ -1582,8 +1587,8 @@ Model {
 	      IC_M		      "MWS.In.VBVIC"
 	      MaxSat_M		      "MWS.Act.VBV.max"
 	      MinSat_M		      "MWS.Act.VBV.min"
-	      deadband_M	      0.0
-	      rateLimit_M	      100000
+	      deadband_M	      "0.0"
+	      rateLimit_M	      "100000"
 	      Port {
 		PortNumber		1
 		Name			"VBVact"
@@ -1635,9 +1640,10 @@ Model {
 	Line {
 	  Name			  "Actuator"
 	  ZOrder		  315
-	  Labels		  [1, 1]
+	  Labels		  [2, 1]
 	  SrcBlock		  "Bus\nCreator"
 	  SrcPort		  1
+	  Points		  [48, 0; 0, -35]
 	  DstBlock		  "Act"
 	  DstPort		  1
 	}
@@ -1647,6 +1653,7 @@ Model {
 	  Labels		  [0, 0]
 	  SrcBlock		  "Bus\nSelector1"
 	  SrcPort		  3
+	  Points		  [0, 0]
 	  DstBlock		  "VAFN"
 	  DstPort		  1
 	}
@@ -1656,6 +1663,7 @@ Model {
 	  Labels		  [0, 0]
 	  SrcBlock		  "Bus\nSelector1"
 	  SrcPort		  2
+	  Points		  [0, 0]
 	  DstBlock		  "VBV"
 	  DstPort		  1
 	}
@@ -1683,6 +1691,7 @@ Model {
 	  Labels		  [0, 0]
 	  SrcBlock		  "Bus\nSelector1"
 	  SrcPort		  1
+	  Points		  [0, 0]
 	  DstBlock		  "FMV"
 	  DstPort		  1
 	}
@@ -1694,6 +1703,15 @@ Model {
 	  SrcPort		  1
 	  DstBlock		  "Bus\nCreator"
 	  DstPort		  1
+	}
+	Line {
+	  Name			  "<Scalars>"
+	  ZOrder		  349
+	  Labels		  [0, 0]
+	  SrcBlock		  "Bus\nSelector1"
+	  SrcPort		  4
+	  DstBlock		  "Bus\nCreator"
+	  DstPort		  4
 	}
       }
     }
@@ -1750,8 +1768,8 @@ Model {
       RequestExecContextInheritance off
       System {
 	Name			"Control System"
-	Location		[350, 182, 1697, 955]
-	Open			off
+	Location		[224, 170, 1743, 1027]
+	Open			on
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
 	ScreenColor		"white"
@@ -1762,7 +1780,7 @@ Model {
 	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
 	TiledPageScale		1
 	ShowPageBoundaries	off
-	ZoomFactor		"67"
+	ZoomFactor		"175"
 	Block {
 	  BlockType		  Inport
 	  Name			  "CntrlInputs"
@@ -1810,13 +1828,24 @@ Model {
 	}
 	Block {
 	  BlockType		  BusCreator
+	  Name			  "Bus\nCreator"
+	  SID			  "1196"
+	  Ports			  [6, 1]
+	  Position		  [1830, 1355, 1835, 1560]
+	  ZOrder		  1188
+	  ShowName		  off
+	  Inputs		  "6"
+	  DisplayOption		  "bar"
+	}
+	Block {
+	  BlockType		  BusCreator
 	  Name			  "Bus\nCreator2"
 	  SID			  "216"
-	  Ports			  [12, 1]
-	  Position		  [1220, 721, 1225, 1069]
+	  Ports			  [13, 1]
+	  Position		  [1220, 721, 1225, 1099]
 	  ZOrder		  883
 	  ShowName		  off
-	  Inputs		  "12"
+	  Inputs		  "13"
 	  DisplayOption		  "bar"
 	  Port {
 	    PortNumber		    1
@@ -1972,7 +2001,7 @@ Model {
 	  SourceBlock		  "Lib_Cntrl_CorrectedSpeed_TMATS/Corrected Speed"
 	  SourceType		  "T-MATS: Corrected Speed Library Block"
 	  ContentPreviewEnabled	  off
-	  C_TSTD_M		  518.67
+	  C_TSTD_M		  "518.67"
 	}
 	Block {
 	  BlockType		  Product
@@ -2827,7 +2856,7 @@ Model {
 		    Kp_M		    "MWS.Cntrl.N1mx_Kp"
 		    Ki_M		    "MWS.Cntrl.N1mx_Ki"
 		    PI_IC_M		    "MWS.In.WfIC"
-		    WGain_M		    2000
+		    WGain_M		    "2000"
 		    Ts_M		    "MWS.In.Ts"
 		    }
 		    Block {
@@ -2953,7 +2982,7 @@ Model {
 		    Kp_M		    "MWS.Cntrl.N3mx_Kp"
 		    Ki_M		    "MWS.Cntrl.N3mx_Ki"
 		    PI_IC_M		    "MWS.In.WfIC"
-		    WGain_M		    2000
+		    WGain_M		    "2000"
 		    Ts_M		    "MWS.In.Ts"
 		    }
 		    Block {
@@ -3079,7 +3108,7 @@ Model {
 		    Kp_M		    "MWS.Cntrl.Ps3mx_Kp"
 		    Ki_M		    "MWS.Cntrl.Ps3mx_Ki"
 		    PI_IC_M		    "MWS.In.WfIC"
-		    WGain_M		    2000
+		    WGain_M		    "2000"
 		    Ts_M		    "MWS.In.Ts"
 		    }
 		    Block {
@@ -3607,7 +3636,7 @@ Model {
 		    Kp_M		    "MWS.Cntrl.T45mx_Kp"
 		    Ki_M		    "MWS.Cntrl.T45mx_Ki"
 		    PI_IC_M		    "MWS.In.WfIC"
-		    WGain_M		    2000
+		    WGain_M		    "2000"
 		    Ts_M		    "MWS.In.Ts"
 		    }
 		    Block {
@@ -4389,7 +4418,7 @@ Model {
 		    Kp_M		    "MWS.Cntrl.Ps3mn_Kp"
 		    Ki_M		    "MWS.Cntrl.Ps3mn_Ki"
 		    PI_IC_M		    "MWS.In.WfIC"
-		    WGain_M		    2000
+		    WGain_M		    "2000"
 		    Ts_M		    "MWS.In.Ts"
 		    }
 		    Block {
@@ -5779,7 +5808,7 @@ Model {
 		  SourceType		  "T-MATS: Set Point Controller (PI)"
 		  ContentPreviewEnabled	  off
 		  PI_IC_M		  "MWS.In.WfIC"
-		  WGain_M		  2000
+		  WGain_M		  "2000"
 		  Ts_M			  "MWS.In.Ts"
 		  Port {
 		    PortNumber		    1
@@ -6506,6 +6535,15 @@ Model {
 	}
 	Block {
 	  BlockType		  Goto
+	  Name			  "Goto23"
+	  SID			  "1194"
+	  Position		  [1865, 1452, 1930, 1468]
+	  ZOrder		  1186
+	  ShowName		  off
+	  GotoTag		  "Scalars"
+	}
+	Block {
+	  BlockType		  Goto
 	  Name			  "Goto24"
 	  SID			  "1186"
 	  Position		  [1840, 767, 1895, 783]
@@ -6550,6 +6588,21 @@ Model {
 	    PortNumber		    1
 	    Name		    "N1cReq"
 	    PropagatedSignals	    "Nc1Req"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	}
+	Block {
+	  BlockType		  From
+	  Name			  "Goto28"
+	  SID			  "1204"
+	  Position		  [1080, 1082, 1145, 1098]
+	  ZOrder		  1196
+	  ShowName		  off
+	  GotoTag		  "Scalars"
+	  Port {
+	    PortNumber		    1
+	    Name		    "Scalars"
 	    RTWStorageClass	    "Auto"
 	    DataLoggingNameMode	    "SignalName"
 	  }
@@ -6747,6 +6800,27 @@ Model {
 	  GotoTag		  "CntrlInp"
 	}
 	Block {
+	  BlockType		  Reference
+	  Name			  "Model Source4"
+	  SID			  "1206"
+	  Ports			  [0, 1]
+	  Position		  [1440, 1359, 1530, 1381]
+	  ZOrder		  1197
+	  ShowName		  off
+	  LibraryVersion	  "1.353"
+	  SourceBlock		  "Lib_Solve_ModelSource_TMATS/Model Source"
+	  SourceType		  "T-MATS: Model Source Library Block"
+	  ContentPreviewEnabled	  off
+	  T_vec_M		  "[0   10.0000   40.0000   40.1000   50.0000]"
+	  input_array_M		  "[0   0   0   -0.1   -0.1]"
+	  Port {
+	    PortNumber		    1
+	    Name		    "s_Wc_HPC"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	}
+	Block {
 	  BlockType		  Saturate
 	  Name			  "Saturation"
 	  SID			  "1123"
@@ -6801,10 +6875,100 @@ Model {
 	  SPArray_M		  "MWS.Cntrl.VBV_sch"
 	}
 	Block {
+	  BlockType		  Constant
+	  Name			  "s_Eff_HPC"
+	  SID			  "1199"
+	  Position		  [1670, 1432, 1755, 1448]
+	  ZOrder		  1191
+	  ShowName		  off
+	  Value			  "0"
+	  Port {
+	    PortNumber		    1
+	    Name		    "s_Eff_HPC"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	}
+	Block {
+	  BlockType		  Constant
+	  Name			  "s_Eff_LPC"
+	  SID			  "1202"
+	  Position		  [1655, 1537, 1755, 1553]
+	  ZOrder		  1194
+	  ShowName		  off
+	  Value			  "0"
+	  Port {
+	    PortNumber		    1
+	    Name		    "s_Eff_LPC"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	}
+	Block {
+	  BlockType		  Constant
+	  Name			  "s_PR_HPC"
+	  SID			  "1198"
+	  Position		  [1590, 1397, 1695, 1413]
+	  ZOrder		  1190
+	  ShowName		  off
+	  Value			  "0"
+	  Port {
+	    PortNumber		    1
+	    Name		    "s_PR_HPC"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	}
+	Block {
+	  BlockType		  Constant
+	  Name			  "s_PR_LPC"
+	  SID			  "1201"
+	  Position		  [1615, 1500, 1695, 1520]
+	  ZOrder		  1193
+	  ShowName		  off
+	  Value			  "0"
+	  Port {
+	    PortNumber		    1
+	    Name		    "s_PR_LPC"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	}
+	Block {
+	  BlockType		  Constant
+	  Name			  "s_Wc_HPC"
+	  SID			  "1197"
+	  Position		  [1450, 1307, 1535, 1323]
+	  ZOrder		  1189
+	  ShowName		  off
+	  Value			  "0"
+	  Port {
+	    PortNumber		    1
+	    Name		    "s_Wc_HPC"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	}
+	Block {
+	  BlockType		  Constant
+	  Name			  "s_Wc_LPC"
+	  SID			  "1200"
+	  Position		  [1550, 1467, 1630, 1483]
+	  ZOrder		  1192
+	  ShowName		  off
+	  Value			  "0"
+	  Port {
+	    PortNumber		    1
+	    Name		    "s_Wc_LPC"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	}
+	Block {
 	  BlockType		  Outport
 	  Name			  "control"
 	  SID			  "84"
-	  Position		  [1295, 888, 1325, 902]
+	  Position		  [1295, 903, 1325, 917]
 	  ZOrder		  862
 	  IconDisplay		  "Port number"
 	}
@@ -7237,6 +7401,76 @@ Model {
 	  DstBlock		  "Goto18"
 	  DstPort		  1
 	}
+	Line {
+	  ZOrder		  1653
+	  SrcBlock		  "Bus\nCreator"
+	  SrcPort		  1
+	  DstBlock		  "Goto23"
+	  DstPort		  1
+	}
+	Line {
+	  Name			  "s_Wc_HPC"
+	  ZOrder		  1662
+	  Labels		  [1, 0]
+	  SrcBlock		  "Model Source4"
+	  SrcPort		  1
+	  DstBlock		  "Bus\nCreator"
+	  DstPort		  1
+	}
+	Line {
+	  Name			  "s_PR_HPC"
+	  ZOrder		  1655
+	  Labels		  [1, 1]
+	  SrcBlock		  "s_PR_HPC"
+	  SrcPort		  1
+	  DstBlock		  "Bus\nCreator"
+	  DstPort		  2
+	}
+	Line {
+	  Name			  "s_Eff_HPC"
+	  ZOrder		  1656
+	  Labels		  [1, 1]
+	  SrcBlock		  "s_Eff_HPC"
+	  SrcPort		  1
+	  DstBlock		  "Bus\nCreator"
+	  DstPort		  3
+	}
+	Line {
+	  Name			  "s_Wc_LPC"
+	  ZOrder		  1657
+	  Labels		  [1, 1]
+	  SrcBlock		  "s_Wc_LPC"
+	  SrcPort		  1
+	  DstBlock		  "Bus\nCreator"
+	  DstPort		  4
+	}
+	Line {
+	  Name			  "s_PR_LPC"
+	  ZOrder		  1658
+	  Labels		  [1, 1]
+	  SrcBlock		  "s_PR_LPC"
+	  SrcPort		  1
+	  DstBlock		  "Bus\nCreator"
+	  DstPort		  5
+	}
+	Line {
+	  Name			  "s_Eff_LPC"
+	  ZOrder		  1659
+	  Labels		  [1, 1]
+	  SrcBlock		  "s_Eff_LPC"
+	  SrcPort		  1
+	  DstBlock		  "Bus\nCreator"
+	  DstPort		  6
+	}
+	Line {
+	  Name			  "Scalars"
+	  ZOrder		  1660
+	  Labels		  [1, 1]
+	  SrcBlock		  "Goto28"
+	  SrcPort		  1
+	  DstBlock		  "Bus\nCreator2"
+	  DstPort		  13
+	}
 	Annotation {
 	  SID			  "1103"
 	  Name			  "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n<html"
@@ -7333,6 +7567,17 @@ Model {
 	  Interpreter		  "rich"
 	  ZOrder		  4
 	}
+	Annotation {
+	  SID			  "1205"
+	  Name			  "Note: final scalars will be (s_Wc_HPC + 1)* CurrentScalar"
+	  Position		  [1861, 1400, 2129, 1415]
+	  InternalMargins	  [0, 0, 0, 0]
+	  FixedHeight		  off
+	  FixedWidth		  off
+	  HorizontalAlignment	  "left"
+	  VerticalAlignment	  "top"
+	  ZOrder		  -1
+	}
       }
     }
     Block {
@@ -7345,7 +7590,7 @@ Model {
       RequestExecContextInheritance off
       System {
 	Name			"EngineSystem"
-	Location		[350, 182, 1697, 955]
+	Location		[313, 70, 1832, 927]
 	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
@@ -7357,7 +7602,7 @@ Model {
 	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
 	TiledPageScale		1
 	ShowPageBoundaries	off
-	ZoomFactor		"82"
+	ZoomFactor		"100"
 	Block {
 	  BlockType		  Inport
 	  Name			  "EngSysInp"
@@ -7421,7 +7666,7 @@ Model {
 	  }
 	  System {
 	    Name		    "EngineDW"
-	    Location		    [350, 182, 1697, 955]
+	    Location		    [313, 70, 1832, 927]
 	    Open		    off
 	    ModelBrowserVisibility  off
 	    ModelBrowserWidth	    200
@@ -7433,12 +7678,12 @@ Model {
 	    TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
 	    TiledPageScale	    1
 	    ShowPageBoundaries	    off
-	    ZoomFactor		    "81"
+	    ZoomFactor		    "150"
 	    Block {
 	      BlockType		      Inport
 	      Name		      "EngSysInp"
 	      SID		      "44"
-	      Position		      [765, 53, 795, 67]
+	      Position		      [765, 58, 795, 72]
 	      ZOrder		      837
 	      IconDisplay	      "Port number"
 	    }
@@ -7446,7 +7691,7 @@ Model {
 	      BlockType		      Inport
 	      Name		      "Effectors"
 	      SID		      "43"
-	      Position		      [765, 143, 795, 157]
+	      Position		      [775, 238, 805, 252]
 	      ZOrder		      836
 	      Port		      "2"
 	      IconDisplay	      "Port number"
@@ -7455,7 +7700,7 @@ Model {
 	      BlockType		      Inport
 	      Name		      "N2"
 	      SID		      "53"
-	      Position		      [965, 308, 995, 322]
+	      Position		      [965, 433, 995, 447]
 	      ZOrder		      846
 	      Port		      "3"
 	      IconDisplay	      "Port number"
@@ -7464,7 +7709,7 @@ Model {
 	      BlockType		      Inport
 	      Name		      "N3"
 	      SID		      "184"
-	      Position		      [965, 343, 995, 357]
+	      Position		      [965, 468, 995, 482]
 	      ZOrder		      894
 	      Port		      "4"
 	      IconDisplay	      "Port number"
@@ -7474,7 +7719,7 @@ Model {
 	      Name		      "Bus\nCreator1"
 	      SID		      "146"
 	      Ports		      [3, 1]
-	      Position		      [1485, 23, 1490, 147]
+	      Position		      [1485, 148, 1490, 272]
 	      ZOrder		      900
 	      ShowName		      off
 	      Inputs		      "3"
@@ -7491,7 +7736,7 @@ Model {
 	      Name		      "Bus\nSelector"
 	      SID		      "260"
 	      Ports		      [1, 3]
-	      Position		      [900, 15, 905, 105]
+	      Position		      [900, 20, 905, 110]
 	      ZOrder		      897
 	      ShowName		      off
 	      OutputSignals	      "Alt,dT,MN"
@@ -7518,11 +7763,12 @@ Model {
 	      BlockType		      BusSelector
 	      Name		      "Bus\nSelector1"
 	      SID		      "261"
-	      Ports		      [1, 3]
-	      Position		      [860, 102, 865, 198]
+	      Ports		      [1, 9]
+	      Position		      [860, 111, 865, 379]
 	      ZOrder		      898
 	      ShowName		      off
-	      OutputSignals	      "Wfact,VAFNact,VBVact"
+	      OutputSignals	      "Wfact,VAFNact,VBVact,Scalars.s_Wc_HPC,Scalars.s_PR_HPC,Scalars.s_Eff_HPC,Scalars.s_Wc_LPC,"
+	      "Scalars.s_PR_LPC,Scalars.s_Eff_LPC"
 	      Port {
 		PortNumber		1
 		Name			"<Wfact>"
@@ -7541,13 +7787,49 @@ Model {
 		RTWStorageClass		"Auto"
 		DataLoggingNameMode	"SignalName"
 	      }
+	      Port {
+		PortNumber		4
+		Name			"<s_Wc_HPC>"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	      Port {
+		PortNumber		5
+		Name			"<s_PR_HPC>"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	      Port {
+		PortNumber		6
+		Name			"<s_Eff_HPC>"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	      Port {
+		PortNumber		7
+		Name			"<s_Wc_LPC>"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	      Port {
+		PortNumber		8
+		Name			"<s_PR_LPC>"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	      Port {
+		PortNumber		9
+		Name			"<s_Eff_LPC>"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
 	    }
 	    Block {
 	      BlockType		      BusSelector
 	      Name		      "Bus\nSelector2"
 	      SID		      "256"
 	      Ports		      [1, 1]
-	      Position		      [840, 48, 845, 72]
+	      Position		      [840, 53, 845, 77]
 	      ZOrder		      919
 	      ShowName		      off
 	      OutputSignals	      "Env"
@@ -7562,7 +7844,7 @@ Model {
 	      BlockType		      Constant
 	      Name		      "Constant"
 	      SID		      "11"
-	      Position		      [1240, 627, 1270, 643]
+	      Position		      [1240, 752, 1270, 768]
 	      ZOrder		      814
 	      BlockMirror	      on
 	      ShowName		      off
@@ -7572,7 +7854,7 @@ Model {
 	      Name		      "Demux"
 	      SID		      "185"
 	      Ports		      [1, 2]
-	      Position		      [1270, 241, 1275, 314]
+	      Position		      [1270, 366, 1275, 439]
 	      ZOrder		      895
 	      ShowName		      off
 	      Outputs		      "2"
@@ -7583,11 +7865,11 @@ Model {
 	      Name		      "Engine Model"
 	      SID		      "7"
 	      Ports		      [3, 3]
-	      Position		      [1080, 197, 1220, 363]
+	      Position		      [1080, 322, 1220, 488]
 	      ZOrder		      810
 	      ModelNameDialog	      "AGTF30_eng.mdl"
 	      SimulationMode	      "Normal"
-	      ModelReferenceVersion   "1.306"
+	      ModelReferenceVersion   "1.312"
 	      List {
 		ListType		InputPortNames
 		port0			"Sys_In"
@@ -7643,7 +7925,7 @@ Model {
 	      BlockType		      From
 	      Name		      "From"
 	      SID		      "315"
-	      Position		      [1305, 38, 1365, 52]
+	      Position		      [1305, 163, 1365, 177]
 	      ZOrder		      901
 	      ShowName		      off
 	      GotoTag		      "Iterations"
@@ -7658,7 +7940,7 @@ Model {
 	      BlockType		      Goto
 	      Name		      "From1"
 	      SID		      "321"
-	      Position		      [1270, 558, 1330, 572]
+	      Position		      [1270, 683, 1330, 697]
 	      ZOrder		      907
 	      ShowName		      off
 	      GotoTag		      "Iterations"
@@ -7667,7 +7949,7 @@ Model {
 	      BlockType		      Goto
 	      Name		      "From2"
 	      SID		      "323"
-	      Position		      [1385, 328, 1445, 342]
+	      Position		      [1385, 453, 1445, 467]
 	      ZOrder		      909
 	      ShowName		      off
 	      GotoTag		      "Dep"
@@ -7676,7 +7958,7 @@ Model {
 	      BlockType		      Goto
 	      Name		      "From3"
 	      SID		      "324"
-	      Position		      [935, 388, 995, 402]
+	      Position		      [935, 513, 995, 527]
 	      ZOrder		      910
 	      ShowName		      off
 	      GotoTag		      "Indep"
@@ -7685,7 +7967,7 @@ Model {
 	      BlockType		      From
 	      Name		      "From4"
 	      SID		      "327"
-	      Position		      [1305, 78, 1365, 92]
+	      Position		      [1305, 203, 1365, 217]
 	      ZOrder		      913
 	      ShowName		      off
 	      GotoTag		      "Dep"
@@ -7694,7 +7976,7 @@ Model {
 	      BlockType		      From
 	      Name		      "From5"
 	      SID		      "328"
-	      Position		      [1305, 118, 1365, 132]
+	      Position		      [1305, 243, 1365, 257]
 	      ZOrder		      914
 	      ShowName		      off
 	      GotoTag		      "Indep"
@@ -7704,7 +7986,7 @@ Model {
 	      Name		      "Iterative NR Solver w JacobianCalc"
 	      SID		      "36"
 	      Ports		      [3, 3]
-	      Position		      [1080, 604, 1220, 666]
+	      Position		      [1080, 729, 1220, 791]
 	      ZOrder		      835
 	      BlockMirror	      on
 	      LibraryVersion	      "1.381"
@@ -7729,11 +8011,11 @@ Model {
 	      BlockType		      Mux
 	      Name		      "Mux1"
 	      SID		      "15"
-	      Ports		      [6, 1]
-	      Position		      [1010, 9, 1015, 201]
+	      Ports		      [12, 1]
+	      Position		      [1010, 23, 1015, 377]
 	      ZOrder		      818
 	      ShowName		      off
-	      Inputs		      "6"
+	      Inputs		      "12"
 	      DisplayOption	      "bar"
 	    }
 	    Block {
@@ -7741,7 +8023,7 @@ Model {
 	      Name		      "Mux2"
 	      SID		      "183"
 	      Ports		      [2, 1]
-	      Position		      [1025, 298, 1030, 367]
+	      Position		      [1025, 423, 1030, 492]
 	      ZOrder		      893
 	      ShowName		      off
 	      Inputs		      "2"
@@ -7751,7 +8033,7 @@ Model {
 	      BlockType		      SignalConversion
 	      Name		      "Signal\nConversion"
 	      SID		      "333"
-	      Position		      [1390, 116, 1405, 134]
+	      Position		      [1390, 241, 1405, 259]
 	      ZOrder		      917
 	      ShowName		      off
 	      Port {
@@ -7765,7 +8047,7 @@ Model {
 	      BlockType		      SignalConversion
 	      Name		      "Signal\nConversion1"
 	      SID		      "334"
-	      Position		      [1390, 76, 1405, 94]
+	      Position		      [1390, 201, 1405, 219]
 	      ZOrder		      918
 	      ShowName		      off
 	      Port {
@@ -7779,7 +8061,7 @@ Model {
 	      BlockType		      Terminator
 	      Name		      "Terminator"
 	      SID		      "105"
-	      Position		      [965, 645, 985, 665]
+	      Position		      [965, 770, 985, 790]
 	      ZOrder		      849
 	      BlockMirror	      on
 	      ShowName		      off
@@ -7789,7 +8071,7 @@ Model {
 	      Name		      "While Iterator"
 	      SID		      "50"
 	      Ports		      [1, 1]
-	      Position		      [1100, 511, 1205, 579]
+	      Position		      [1100, 636, 1205, 704]
 	      ZOrder		      844
 	      MaxIters		      "MWS.In.Max_IterDyn"
 	      WhileBlockType	      "do-while"
@@ -7799,7 +8081,7 @@ Model {
 	      BlockType		      Outport
 	      Name		      "EngOut"
 	      SID		      "48"
-	      Position		      [1575, 218, 1605, 232]
+	      Position		      [1575, 343, 1605, 357]
 	      ZOrder		      891
 	      IconDisplay	      "Port number"
 	    }
@@ -7807,7 +8089,7 @@ Model {
 	      BlockType		      Outport
 	      Name		      "Solver"
 	      SID		      "181"
-	      Position		      [1575, 78, 1605, 92]
+	      Position		      [1575, 203, 1605, 217]
 	      ZOrder		      892
 	      Port		      "2"
 	      IconDisplay	      "Port number"
@@ -7816,7 +8098,7 @@ Model {
 	      BlockType		      Outport
 	      Name		      "N2dot"
 	      SID		      "51"
-	      Position		      [1575, 253, 1605, 267]
+	      Position		      [1575, 378, 1605, 392]
 	      ZOrder		      845
 	      Port		      "3"
 	      IconDisplay	      "Port number"
@@ -7825,7 +8107,7 @@ Model {
 	      BlockType		      Outport
 	      Name		      "N3dot"
 	      SID		      "186"
-	      Position		      [1575, 288, 1605, 302]
+	      Position		      [1575, 413, 1605, 427]
 	      ZOrder		      896
 	      Port		      "4"
 	      IconDisplay	      "Port number"
@@ -7843,7 +8125,7 @@ Model {
 	      ZOrder		      43
 	      SrcBlock		      "Mux1"
 	      SrcPort		      1
-	      Points		      [13, 0; 0, 120]
+	      Points		      [13, 0; 0, 150]
 	      DstBlock		      "Engine Model"
 	      DstPort		      1
 	    }
@@ -8093,6 +8375,60 @@ Model {
 	      DstBlock		      "Bus\nSelector"
 	      DstPort		      1
 	    }
+	    Line {
+	      Name		      "<s_Wc_HPC>"
+	      ZOrder		      516
+	      Labels		      [0, 0]
+	      SrcBlock		      "Bus\nSelector1"
+	      SrcPort		      4
+	      DstBlock		      "Mux1"
+	      DstPort		      7
+	    }
+	    Line {
+	      Name		      "<s_PR_HPC>"
+	      ZOrder		      517
+	      Labels		      [0, 0]
+	      SrcBlock		      "Bus\nSelector1"
+	      SrcPort		      5
+	      DstBlock		      "Mux1"
+	      DstPort		      8
+	    }
+	    Line {
+	      Name		      "<s_Eff_HPC>"
+	      ZOrder		      518
+	      Labels		      [0, 0]
+	      SrcBlock		      "Bus\nSelector1"
+	      SrcPort		      6
+	      DstBlock		      "Mux1"
+	      DstPort		      9
+	    }
+	    Line {
+	      Name		      "<s_Wc_LPC>"
+	      ZOrder		      519
+	      Labels		      [0, 0]
+	      SrcBlock		      "Bus\nSelector1"
+	      SrcPort		      7
+	      DstBlock		      "Mux1"
+	      DstPort		      10
+	    }
+	    Line {
+	      Name		      "<s_PR_LPC>"
+	      ZOrder		      520
+	      Labels		      [0, 0]
+	      SrcBlock		      "Bus\nSelector1"
+	      SrcPort		      8
+	      DstBlock		      "Mux1"
+	      DstPort		      11
+	    }
+	    Line {
+	      Name		      "<s_Eff_LPC>"
+	      ZOrder		      521
+	      Labels		      [0, 0]
+	      SrcBlock		      "Bus\nSelector1"
+	      SrcPort		      9
+	      DstBlock		      "Mux1"
+	      DstPort		      12
+	    }
 	    Annotation {
 	      SID		      "302"
 	      Name		      "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">"
@@ -8100,7 +8436,7 @@ Model {
 	      "; }\n</style></head><body style=\" font-family:'Helvetica'; font-size:10px; font-weight:400; font-style:normal;"
 	      "\">\n<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text"
 	      "-indent:0px;\"><span style=\" font-size:14pt;\">Independent/Dependent Solver</span></p></body></html>"
-	      Position		      [995, 469, 1265, 494]
+	      Position		      [995, 594, 1265, 619]
 	      InternalMargins	      [0, 0, 0, 0]
 	      FixedHeight	      off
 	      FixedWidth	      off
@@ -8116,7 +8452,7 @@ Model {
 	      "; }\n</style></head><body style=\" font-family:'Helvetica'; font-size:10px; font-weight:400; font-style:normal;"
 	      "\">\n<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text"
 	      "-indent:0px;\"><span style=\" font-size:16pt;\">Engine Model Call</span></p></body></html>"
-	      Position		      [1069, 143, 1241, 170]
+	      Position		      [1069, 268, 1241, 295]
 	      InternalMargins	      [0, 0, 0, 0]
 	      FixedHeight	      off
 	      FixedWidth	      off
@@ -8842,21 +9178,21 @@ Model {
 	  Ports			  [1, 1]
 	  Position		  [225, 675, 325, 715]
 	  ZOrder		  910
-	  LibraryVersion	  "1.341"
+	  LibraryVersion	  "1.342"
 	  SourceBlock		  "Lib_Cntrl_FirstOrderSensor_TMATS/1st order  Sensor"
 	  SourceType		  "T-MATS: 1st order sensor Library Block"
 	  ContentPreviewEnabled	  off
 	  IC_M			  "MWS.In.Sensor.ICN1"
 	  Sen_Max_M		  "MWS.Sensor.N1.Max"
 	  Sen_Min_M		  "MWS.Sensor.N1.Min"
-	  Gain_M		  1
+	  Gain_M		  "1"
 	  Tau_M			  "MWS.Sensor.N1.Tau"
 	  GN_EN_M		  off
 	  GN_NST_M		  "MWS.In.Ts"
-	  GN_C_M		  1
-	  GN_MinNoise_M		  0.3
-	  F_Gain_M		  1
-	  F_Drift_M		  0
+	  GN_C_M		  "1"
+	  GN_MinNoise_M		  "0.3"
+	  F_Gain_M		  "1"
+	  F_Drift_M		  "0"
 	  Port {
 	    PortNumber		    1
 	    Name		    "N1sen"
@@ -8871,21 +9207,21 @@ Model {
 	  Ports			  [1, 1]
 	  Position		  [225, 740, 325, 780]
 	  ZOrder		  911
-	  LibraryVersion	  "1.341"
+	  LibraryVersion	  "1.342"
 	  SourceBlock		  "Lib_Cntrl_FirstOrderSensor_TMATS/1st order  Sensor"
 	  SourceType		  "T-MATS: 1st order sensor Library Block"
 	  ContentPreviewEnabled	  off
 	  IC_M			  "MWS.In.Sensor.ICN2"
 	  Sen_Max_M		  "MWS.Sensor.N2.Max"
 	  Sen_Min_M		  "MWS.Sensor.N2.Min"
-	  Gain_M		  1
+	  Gain_M		  "1"
 	  Tau_M			  "MWS.Sensor.N2.Tau"
 	  GN_EN_M		  off
 	  GN_NST_M		  "MWS.In.Ts"
-	  GN_C_M		  1
-	  GN_MinNoise_M		  0.3
-	  F_Gain_M		  1
-	  F_Drift_M		  0
+	  GN_C_M		  "1"
+	  GN_MinNoise_M		  "0.3"
+	  F_Gain_M		  "1"
+	  F_Drift_M		  "0"
 	  Port {
 	    PortNumber		    1
 	    Name		    "N2sen"
@@ -8900,21 +9236,21 @@ Model {
 	  Ports			  [1, 1]
 	  Position		  [225, 805, 325, 845]
 	  ZOrder		  912
-	  LibraryVersion	  "1.341"
+	  LibraryVersion	  "1.342"
 	  SourceBlock		  "Lib_Cntrl_FirstOrderSensor_TMATS/1st order  Sensor"
 	  SourceType		  "T-MATS: 1st order sensor Library Block"
 	  ContentPreviewEnabled	  off
 	  IC_M			  "MWS.In.Sensor.ICN3"
 	  Sen_Max_M		  "MWS.Sensor.N3.Max"
 	  Sen_Min_M		  "MWS.Sensor.N3.Min"
-	  Gain_M		  1
+	  Gain_M		  "1"
 	  Tau_M			  "MWS.Sensor.N3.Tau"
 	  GN_EN_M		  off
 	  GN_NST_M		  "MWS.In.Ts"
-	  GN_C_M		  1
-	  GN_MinNoise_M		  0.3
-	  F_Gain_M		  1
-	  F_Drift_M		  0
+	  GN_C_M		  "1"
+	  GN_MinNoise_M		  "0.3"
+	  F_Gain_M		  "1"
+	  F_Drift_M		  "0"
 	  Port {
 	    PortNumber		    1
 	    Name		    "N3sen"
@@ -8929,21 +9265,21 @@ Model {
 	  Ports			  [1, 1]
 	  Position		  [380, 257, 480, 283]
 	  ZOrder		  914
-	  LibraryVersion	  "1.341"
+	  LibraryVersion	  "1.342"
 	  SourceBlock		  "Lib_Cntrl_FirstOrderSensor_TMATS/1st order  Sensor"
 	  SourceType		  "T-MATS: 1st order sensor Library Block"
 	  ContentPreviewEnabled	  off
 	  IC_M			  "MWS.In.Sensor.ICPa"
 	  Sen_Max_M		  "MWS.Sensor.P2.Max"
 	  Sen_Min_M		  "MWS.Sensor.P2.Min"
-	  Gain_M		  1
+	  Gain_M		  "1"
 	  Tau_M			  "MWS.Sensor.P2.Tau"
 	  GN_EN_M		  off
 	  GN_NST_M		  "MWS.In.Ts"
-	  GN_C_M		  1
-	  GN_MinNoise_M		  0.3
-	  F_Gain_M		  1
-	  F_Drift_M		  0
+	  GN_C_M		  "1"
+	  GN_MinNoise_M		  "0.3"
+	  F_Gain_M		  "1"
+	  F_Drift_M		  "0"
 	  Port {
 	    PortNumber		    1
 	    Name		    "Pasen"
@@ -8958,21 +9294,21 @@ Model {
 	  Ports			  [1, 1]
 	  Position		  [380, 437, 480, 463]
 	  ZOrder		  904
-	  LibraryVersion	  "1.341"
+	  LibraryVersion	  "1.342"
 	  SourceBlock		  "Lib_Cntrl_FirstOrderSensor_TMATS/1st order  Sensor"
 	  SourceType		  "T-MATS: 1st order sensor Library Block"
 	  ContentPreviewEnabled	  off
 	  IC_M			  "MWS.In.Sensor.ICPs3"
 	  Sen_Max_M		  "MWS.Sensor.Ps3.Max"
 	  Sen_Min_M		  "MWS.Sensor.Ps3.Min"
-	  Gain_M		  1
+	  Gain_M		  "1"
 	  Tau_M			  "MWS.Sensor.Ps3.Tau"
 	  GN_EN_M		  off
 	  GN_NST_M		  "MWS.In.Ts"
-	  GN_C_M		  1
-	  GN_MinNoise_M		  0.3
-	  F_Gain_M		  1
-	  F_Drift_M		  0
+	  GN_C_M		  "1"
+	  GN_MinNoise_M		  "0.3"
+	  F_Gain_M		  "1"
+	  F_Drift_M		  "0"
 	  Port {
 	    PortNumber		    1
 	    Name		    "Ps3sen"
@@ -8987,21 +9323,21 @@ Model {
 	  Ports			  [1, 1]
 	  Position		  [380, 317, 480, 343]
 	  ZOrder		  901
-	  LibraryVersion	  "1.341"
+	  LibraryVersion	  "1.342"
 	  SourceBlock		  "Lib_Cntrl_FirstOrderSensor_TMATS/1st order  Sensor"
 	  SourceType		  "T-MATS: 1st order sensor Library Block"
 	  ContentPreviewEnabled	  off
 	  IC_M			  "MWS.In.Sensor.ICP2"
 	  Sen_Max_M		  "MWS.Sensor.P2.Max"
 	  Sen_Min_M		  "MWS.Sensor.P2.Min"
-	  Gain_M		  1
+	  Gain_M		  "1"
 	  Tau_M			  "MWS.Sensor.P2.Tau"
 	  GN_EN_M		  off
 	  GN_NST_M		  "MWS.In.Ts"
-	  GN_C_M		  1
-	  GN_MinNoise_M		  0.3
-	  F_Gain_M		  1
-	  F_Drift_M		  0
+	  GN_C_M		  "1"
+	  GN_MinNoise_M		  "0.3"
+	  F_Gain_M		  "1"
+	  F_Drift_M		  "0"
 	  Port {
 	    PortNumber		    1
 	    Name		    "P2sen"
@@ -9016,21 +9352,21 @@ Model {
 	  Ports			  [1, 1]
 	  Position		  [380, 377, 480, 403]
 	  ZOrder		  903
-	  LibraryVersion	  "1.341"
+	  LibraryVersion	  "1.342"
 	  SourceBlock		  "Lib_Cntrl_FirstOrderSensor_TMATS/1st order  Sensor"
 	  SourceType		  "T-MATS: 1st order sensor Library Block"
 	  ContentPreviewEnabled	  off
 	  IC_M			  "MWS.In.Sensor.ICP25"
 	  Sen_Max_M		  "MWS.Sensor.P25.Max"
 	  Sen_Min_M		  "MWS.Sensor.P25.Min"
-	  Gain_M		  1
+	  Gain_M		  "1"
 	  Tau_M			  "MWS.Sensor.P25.Tau"
 	  GN_EN_M		  off
 	  GN_NST_M		  "MWS.In.Ts"
-	  GN_C_M		  1
-	  GN_MinNoise_M		  0.3
-	  F_Gain_M		  1
-	  F_Drift_M		  0
+	  GN_C_M		  "1"
+	  GN_MinNoise_M		  "0.3"
+	  F_Gain_M		  "1"
+	  F_Drift_M		  "0"
 	  Port {
 	    PortNumber		    1
 	    Name		    "P25sen"
@@ -9045,21 +9381,21 @@ Model {
 	  Ports			  [1, 1]
 	  Position		  [380, 497, 480, 523]
 	  ZOrder		  905
-	  LibraryVersion	  "1.341"
+	  LibraryVersion	  "1.342"
 	  SourceBlock		  "Lib_Cntrl_FirstOrderSensor_TMATS/1st order  Sensor"
 	  SourceType		  "T-MATS: 1st order sensor Library Block"
 	  ContentPreviewEnabled	  off
 	  IC_M			  "MWS.In.Sensor.ICP5"
 	  Sen_Max_M		  "MWS.Sensor.P5.Max"
 	  Sen_Min_M		  "MWS.Sensor.P5.Min"
-	  Gain_M		  1
+	  Gain_M		  "1"
 	  Tau_M			  "MWS.Sensor.P5.Tau"
 	  GN_EN_M		  off
 	  GN_NST_M		  "MWS.In.Ts"
-	  GN_C_M		  1
-	  GN_MinNoise_M		  0.3
-	  F_Gain_M		  1
-	  F_Drift_M		  0
+	  GN_C_M		  "1"
+	  GN_MinNoise_M		  "0.3"
+	  F_Gain_M		  "1"
+	  F_Drift_M		  "0"
 	  Port {
 	    PortNumber		    1
 	    Name		    "P5sen"
@@ -9074,21 +9410,21 @@ Model {
 	  Ports			  [1, 1]
 	  Position		  [770, 480, 870, 520]
 	  ZOrder		  906
-	  LibraryVersion	  "1.341"
+	  LibraryVersion	  "1.342"
 	  SourceBlock		  "Lib_Cntrl_FirstOrderSensor_TMATS/1st order  Sensor"
 	  SourceType		  "T-MATS: 1st order sensor Library Block"
 	  ContentPreviewEnabled	  off
 	  IC_M			  "MWS.In.Sensor.ICT2"
 	  Sen_Max_M		  "MWS.Sensor.T2.Max"
 	  Sen_Min_M		  "MWS.Sensor.T2.Min"
-	  Gain_M		  1
+	  Gain_M		  "1"
 	  Tau_M			  "MWS.Sensor.T2.Tau"
 	  GN_EN_M		  off
 	  GN_NST_M		  "MWS.In.Ts"
-	  GN_C_M		  1
-	  GN_MinNoise_M		  0.3
-	  F_Gain_M		  1
-	  F_Drift_M		  0
+	  GN_C_M		  "1"
+	  GN_MinNoise_M		  "0.3"
+	  F_Gain_M		  "1"
+	  F_Drift_M		  "0"
 	  Port {
 	    PortNumber		    1
 	    Name		    "T2sen"
@@ -9103,21 +9439,21 @@ Model {
 	  Ports			  [1, 1]
 	  Position		  [770, 545, 870, 585]
 	  ZOrder		  907
-	  LibraryVersion	  "1.341"
+	  LibraryVersion	  "1.342"
 	  SourceBlock		  "Lib_Cntrl_FirstOrderSensor_TMATS/1st order  Sensor"
 	  SourceType		  "T-MATS: 1st order sensor Library Block"
 	  ContentPreviewEnabled	  off
 	  IC_M			  "MWS.In.Sensor.ICT25"
 	  Sen_Max_M		  "MWS.Sensor.T25.Max"
 	  Sen_Min_M		  "MWS.Sensor.T25.Min"
-	  Gain_M		  1
+	  Gain_M		  "1"
 	  Tau_M			  "MWS.Sensor.T25.Tau"
 	  GN_EN_M		  off
 	  GN_NST_M		  "MWS.In.Ts"
-	  GN_C_M		  1
-	  GN_MinNoise_M		  0.3
-	  F_Gain_M		  1
-	  F_Drift_M		  0
+	  GN_C_M		  "1"
+	  GN_MinNoise_M		  "0.3"
+	  F_Gain_M		  "1"
+	  F_Drift_M		  "0"
 	  Port {
 	    PortNumber		    1
 	    Name		    "T25sen"
@@ -9132,21 +9468,21 @@ Model {
 	  Ports			  [1, 1]
 	  Position		  [770, 610, 870, 650]
 	  ZOrder		  908
-	  LibraryVersion	  "1.341"
+	  LibraryVersion	  "1.342"
 	  SourceBlock		  "Lib_Cntrl_FirstOrderSensor_TMATS/1st order  Sensor"
 	  SourceType		  "T-MATS: 1st order sensor Library Block"
 	  ContentPreviewEnabled	  off
 	  IC_M			  "MWS.In.Sensor.ICT3"
 	  Sen_Max_M		  "MWS.Sensor.T3.Max"
 	  Sen_Min_M		  "MWS.Sensor.T3.Min"
-	  Gain_M		  1
+	  Gain_M		  "1"
 	  Tau_M			  "MWS.Sensor.T3.Tau"
 	  GN_EN_M		  off
 	  GN_NST_M		  "MWS.In.Ts"
-	  GN_C_M		  1
-	  GN_MinNoise_M		  0.3
-	  F_Gain_M		  1
-	  F_Drift_M		  0
+	  GN_C_M		  "1"
+	  GN_MinNoise_M		  "0.3"
+	  F_Gain_M		  "1"
+	  F_Drift_M		  "0"
 	  Port {
 	    PortNumber		    1
 	    Name		    "T3sen"
@@ -9161,21 +9497,21 @@ Model {
 	  Ports			  [1, 1]
 	  Position		  [770, 675, 870, 715]
 	  ZOrder		  909
-	  LibraryVersion	  "1.341"
+	  LibraryVersion	  "1.342"
 	  SourceBlock		  "Lib_Cntrl_FirstOrderSensor_TMATS/1st order  Sensor"
 	  SourceType		  "T-MATS: 1st order sensor Library Block"
 	  ContentPreviewEnabled	  off
 	  IC_M			  "MWS.In.Sensor.ICT45"
 	  Sen_Max_M		  "MWS.Sensor.T45.Max*10"
 	  Sen_Min_M		  "MWS.Sensor.T45.Min"
-	  Gain_M		  1
+	  Gain_M		  "1"
 	  Tau_M			  "MWS.Sensor.T45.Tau"
 	  GN_EN_M		  off
 	  GN_NST_M		  "MWS.In.Ts"
-	  GN_C_M		  1
-	  GN_MinNoise_M		  0.3
-	  F_Gain_M		  1
-	  F_Drift_M		  0
+	  GN_C_M		  "1"
+	  GN_MinNoise_M		  "0.3"
+	  F_Gain_M		  "1"
+	  F_Drift_M		  "0"
 	  Port {
 	    PortNumber		    1
 	    Name		    "T45sen"
@@ -9581,7 +9917,7 @@ Model {
 	  ContentPreviewEnabled	  off
 	  relop			  ">="
 	  const			  "MWS.In.Max_IterDyn"
-	  OutDataTypeStr	  boolean
+	  OutDataTypeStr	  "boolean"
 	  ZeroCross		  on
 	}
 	Block {
@@ -9598,7 +9934,7 @@ Model {
 	  ContentPreviewEnabled	  off
 	  relop			  ">="
 	  const			  "MWS.In.DynRunNonConv"
-	  OutDataTypeStr	  boolean
+	  OutDataTypeStr	  "boolean"
 	  ZeroCross		  on
 	}
 	Block {
@@ -10484,7 +10820,7 @@ Model {
       RequestExecContextInheritance off
       System {
 	Name			"System Inputs"
-	Location		[350, 182, 1697, 955]
+	Location		[123, 18, 1642, 875]
 	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
@@ -10496,7 +10832,7 @@ Model {
 	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
 	TiledPageScale		1
 	ShowPageBoundaries	off
-	ZoomFactor		"91"
+	ZoomFactor		"150"
 	Block {
 	  BlockType		  BusCreator
 	  Name			  "Bus\nCreator"

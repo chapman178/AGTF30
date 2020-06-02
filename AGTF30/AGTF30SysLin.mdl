@@ -7,7 +7,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.41"
+    ComputedModelVersion    "1.42"
     NumModelReferences	    1
     ModelReference {
       ModelRefBlockPath	      "AGTF30SysLin/EngineDW/Engine Model|AGTF30_eng"
@@ -54,11 +54,11 @@ Model {
 	$ObjectID		5
 	$ClassName		"Simulink.EditorInfo"
 	IsActive		[1]
-	ViewObjType		"SimulinkTopLevel"
-	LoadSaveID		"0"
+	ViewObjType		"SimulinkSubsys"
+	LoadSaveID		"1"
 	Extents			[1219.0, 577.0]
-	ZoomFactor		[0.81398809523809534]
-	Offset			[-132.2824497257767, -0.19926873857406235]
+	ZoomFactor		[1.75]
+	Offset			[481.48956661316225, 115.93498831288953]
       }
     }
   }
@@ -68,9 +68,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "jwchapm2"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Fri May 29 16:26:34 2020"
-  RTWModifiedTimeStamp	  512670388
-  ModelVersionFormat	  "1.%<AutoIncrement:41>"
+  LastModifiedDate	  "Tue Jun 02 11:08:32 2020"
+  RTWModifiedTimeStamp	  512996908
+  ModelVersionFormat	  "1.%<AutoIncrement:42>"
   ConfigurationManager	  "none"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -964,7 +964,7 @@ Model {
   System {
     Name		    "AGTF30SysLin"
     Location		    [350, 211, 1621, 990]
-    Open		    on
+    Open		    off
     ModelBrowserVisibility  off
     ModelBrowserWidth	    200
     ScreenColor		    "white"
@@ -975,9 +975,9 @@ Model {
     TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
     TiledPageScale	    1
     ShowPageBoundaries	    off
-    ZoomFactor		    "81"
+    ZoomFactor		    "200"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    "134"
+    SIDHighWatermark	    "140"
     Block {
       BlockType		      BusCreator
       Name		      "Bus\nCreator"
@@ -1264,7 +1264,7 @@ Model {
       System {
 	Name			"EngineDW"
 	Location		[350, 211, 1621, 990]
-	Open			off
+	Open			on
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
 	ScreenColor		"white"
@@ -1275,12 +1275,12 @@ Model {
 	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
 	TiledPageScale		1
 	ShowPageBoundaries	off
-	ZoomFactor		"89"
+	ZoomFactor		"175"
 	Block {
 	  BlockType		  Inport
 	  Name			  "EngSysInp"
 	  SID			  "2"
-	  Position		  [765, 53, 795, 67]
+	  Position		  [760, 58, 790, 72]
 	  ZOrder		  837
 	  IconDisplay		  "Port number"
 	}
@@ -1288,7 +1288,7 @@ Model {
 	  BlockType		  Inport
 	  Name			  "Effectors"
 	  SID			  "3"
-	  Position		  [765, 113, 795, 127]
+	  Position		  [760, 118, 790, 132]
 	  ZOrder		  836
 	  Port			  "2"
 	  IconDisplay		  "Port number"
@@ -1297,7 +1297,7 @@ Model {
 	  BlockType		  Inport
 	  Name			  "N2"
 	  SID			  "4"
-	  Position		  [965, 308, 995, 322]
+	  Position		  [965, 478, 995, 492]
 	  ZOrder		  846
 	  Port			  "3"
 	  IconDisplay		  "Port number"
@@ -1306,7 +1306,7 @@ Model {
 	  BlockType		  Inport
 	  Name			  "N3"
 	  SID			  "5"
-	  Position		  [965, 343, 995, 357]
+	  Position		  [965, 513, 995, 527]
 	  ZOrder		  894
 	  Port			  "4"
 	  IconDisplay		  "Port number"
@@ -1316,7 +1316,7 @@ Model {
 	  Name			  "All Dep"
 	  SID			  "113"
 	  Ports			  [3, 1]
-	  Position		  [1370, 325, 1445, 385]
+	  Position		  [1370, 495, 1445, 555]
 	  ZOrder		  1916
 	  RequestExecContextInheritance	off
 	  Port {
@@ -1995,7 +1995,7 @@ Model {
 	  Name			  "All Ind"
 	  SID			  "126"
 	  Ports			  [1, 3]
-	  Position		  [845, 230, 925, 290]
+	  Position		  [780, 400, 860, 460]
 	  ZOrder		  1917
 	  RequestExecContextInheritance	off
 	  Port {
@@ -2165,11 +2165,11 @@ Model {
 	  BlockType		  BusCreator
 	  Name			  "Bus\nCreator"
 	  SID			  "108"
-	  Ports			  [6, 1]
-	  Position		  [1005, 7, 1010, 203]
+	  Ports			  [12, 1]
+	  Position		  [1005, 18, 1010, 382]
 	  ZOrder		  1911
 	  ShowName		  off
-	  Inputs		  "6"
+	  Inputs		  "12"
 	  DisplayOption		  "bar"
 	}
 	Block {
@@ -2177,7 +2177,7 @@ Model {
 	  Name			  "Bus\nCreator1"
 	  SID			  "6"
 	  Ports			  [3, 1]
-	  Position		  [1485, 23, 1490, 147]
+	  Position		  [1485, 193, 1490, 317]
 	  ZOrder		  900
 	  ShowName		  off
 	  Inputs		  "3"
@@ -2194,7 +2194,7 @@ Model {
 	  Name			  "Bus\nSelector"
 	  SID			  "7"
 	  Ports			  [1, 3]
-	  Position		  [900, 15, 905, 105]
+	  Position		  [895, 20, 900, 110]
 	  ZOrder		  897
 	  ShowName		  off
 	  OutputSignals		  "Altitude,dTamb,MN"
@@ -2221,21 +2221,75 @@ Model {
 	  BlockType		  Constant
 	  Name			  "Constant"
 	  SID			  "9"
-	  Position		  [1240, 572, 1270, 588]
+	  Position		  [1240, 742, 1270, 758]
 	  ZOrder		  814
 	  BlockMirror		  on
 	  ShowName		  off
+	}
+	Block {
+	  BlockType		  Constant
+	  Name			  "Constant1"
+	  SID			  "135"
+	  Position		  [940, 205, 965, 225]
+	  ZOrder		  1918
+	  ShowName		  off
+	  Value			  "0"
+	}
+	Block {
+	  BlockType		  Constant
+	  Name			  "Constant2"
+	  SID			  "136"
+	  Position		  [940, 235, 965, 255]
+	  ZOrder		  1919
+	  ShowName		  off
+	  Value			  "0"
+	}
+	Block {
+	  BlockType		  Constant
+	  Name			  "Constant3"
+	  SID			  "137"
+	  Position		  [940, 265, 965, 285]
+	  ZOrder		  1920
+	  ShowName		  off
+	  Value			  "0"
+	}
+	Block {
+	  BlockType		  Constant
+	  Name			  "Constant4"
+	  SID			  "138"
+	  Position		  [940, 295, 965, 315]
+	  ZOrder		  1921
+	  ShowName		  off
+	  Value			  "0"
+	}
+	Block {
+	  BlockType		  Constant
+	  Name			  "Constant5"
+	  SID			  "139"
+	  Position		  [940, 325, 965, 345]
+	  ZOrder		  1922
+	  ShowName		  off
+	  Value			  "0"
+	}
+	Block {
+	  BlockType		  Constant
+	  Name			  "Constant6"
+	  SID			  "140"
+	  Position		  [940, 355, 965, 375]
+	  ZOrder		  1923
+	  ShowName		  off
+	  Value			  "0"
 	}
 	Block {
 	  BlockType		  ModelReference
 	  Name			  "Engine Model"
 	  SID			  "11"
 	  Ports			  [3, 3]
-	  Position		  [1080, 197, 1220, 363]
+	  Position		  [1080, 367, 1220, 533]
 	  ZOrder		  810
 	  ModelNameDialog	  "AGTF30_eng.mdl"
 	  SimulationMode	  "Normal"
-	  ModelReferenceVersion	  "1.306"
+	  ModelReferenceVersion	  "1.312"
 	  List {
 	    ListType		    InputPortNames
 	    port0		    "Sys_In"
@@ -2285,7 +2339,7 @@ Model {
 	  BlockType		  From
 	  Name			  "From"
 	  SID			  "12"
-	  Position		  [1305, 38, 1365, 52]
+	  Position		  [1305, 208, 1365, 222]
 	  ZOrder		  901
 	  ShowName		  off
 	  GotoTag		  "Iterations"
@@ -2300,7 +2354,7 @@ Model {
 	  BlockType		  Goto
 	  Name			  "From1"
 	  SID			  "13"
-	  Position		  [1270, 503, 1330, 517]
+	  Position		  [1270, 673, 1330, 687]
 	  ZOrder		  907
 	  ShowName		  off
 	  GotoTag		  "Iterations"
@@ -2309,7 +2363,7 @@ Model {
 	  BlockType		  Goto
 	  Name			  "From12"
 	  SID			  "104"
-	  Position		  [1305, 193, 1365, 207]
+	  Position		  [1305, 363, 1365, 377]
 	  ZOrder		  1907
 	  ShowName		  off
 	  GotoTag		  "EngBus"
@@ -2318,7 +2372,7 @@ Model {
 	  BlockType		  From
 	  Name			  "From13"
 	  SID			  "106"
-	  Position		  [1295, 348, 1355, 362]
+	  Position		  [1295, 518, 1355, 532]
 	  ZOrder		  1909
 	  ShowName		  off
 	  GotoTag		  "EngBus"
@@ -2327,7 +2381,7 @@ Model {
 	  BlockType		  Goto
 	  Name			  "From14"
 	  SID			  "109"
-	  Position		  [1070, 98, 1130, 112]
+	  Position		  [1070, 268, 1130, 282]
 	  ZOrder		  1912
 	  ShowName		  off
 	  GotoTag		  "InpBus"
@@ -2336,7 +2390,7 @@ Model {
 	  BlockType		  From
 	  Name			  "From15"
 	  SID			  "111"
-	  Position		  [1295, 368, 1355, 382]
+	  Position		  [1295, 538, 1355, 552]
 	  ZOrder		  1914
 	  ShowName		  off
 	  GotoTag		  "InpBus"
@@ -2345,7 +2399,7 @@ Model {
 	  BlockType		  Goto
 	  Name			  "From2"
 	  SID			  "14"
-	  Position		  [1500, 533, 1560, 547]
+	  Position		  [1500, 703, 1560, 717]
 	  ZOrder		  909
 	  ShowName		  off
 	  GotoTag		  "Dep"
@@ -2354,7 +2408,7 @@ Model {
 	  BlockType		  Goto
 	  Name			  "From3"
 	  SID			  "15"
-	  Position		  [845, 548, 905, 562]
+	  Position		  [720, 718, 780, 732]
 	  ZOrder		  910
 	  ShowName		  off
 	  GotoTag		  "Indep"
@@ -2363,7 +2417,7 @@ Model {
 	  BlockType		  From
 	  Name			  "From4"
 	  SID			  "16"
-	  Position		  [1305, 78, 1365, 92]
+	  Position		  [1305, 248, 1365, 262]
 	  ZOrder		  913
 	  ShowName		  off
 	  GotoTag		  "Dep"
@@ -2372,7 +2426,7 @@ Model {
 	  BlockType		  From
 	  Name			  "From5"
 	  SID			  "17"
-	  Position		  [1305, 118, 1365, 132]
+	  Position		  [1305, 288, 1365, 302]
 	  ZOrder		  914
 	  ShowName		  off
 	  GotoTag		  "Indep"
@@ -2382,7 +2436,7 @@ Model {
 	  Name			  "Iterative NR Solver w JacobianCalc"
 	  SID			  "18"
 	  Ports			  [3, 3]
-	  Position		  [1080, 549, 1220, 611]
+	  Position		  [1080, 719, 1220, 781]
 	  ZOrder		  835
 	  BlockMirror		  on
 	  LibraryVersion	  "1.381"
@@ -2408,7 +2462,7 @@ Model {
 	  Name			  "Mux2"
 	  SID			  "20"
 	  Ports			  [2, 1]
-	  Position		  [1025, 298, 1030, 367]
+	  Position		  [1025, 468, 1030, 537]
 	  ZOrder		  893
 	  ShowName		  off
 	  Inputs		  "2"
@@ -2418,7 +2472,7 @@ Model {
 	  BlockType		  SignalConversion
 	  Name			  "Signal\nConversion"
 	  SID			  "21"
-	  Position		  [1390, 116, 1405, 134]
+	  Position		  [1390, 286, 1405, 304]
 	  ZOrder		  917
 	  ShowName		  off
 	  Port {
@@ -2432,7 +2486,7 @@ Model {
 	  BlockType		  SignalConversion
 	  Name			  "Signal\nConversion1"
 	  SID			  "22"
-	  Position		  [1390, 76, 1405, 94]
+	  Position		  [1390, 246, 1405, 264]
 	  ZOrder		  918
 	  ShowName		  off
 	  Port {
@@ -2446,7 +2500,7 @@ Model {
 	  BlockType		  Terminator
 	  Name			  "Terminator"
 	  SID			  "23"
-	  Position		  [965, 590, 985, 610]
+	  Position		  [965, 760, 985, 780]
 	  ZOrder		  849
 	  BlockMirror		  on
 	  ShowName		  off
@@ -2456,7 +2510,7 @@ Model {
 	  Name			  "While Iterator"
 	  SID			  "24"
 	  Ports			  [1, 1]
-	  Position		  [1100, 456, 1205, 524]
+	  Position		  [1100, 626, 1205, 694]
 	  ZOrder		  844
 	  MaxIters		  "MWS.In.Max_IterSS"
 	  WhileBlockType	  "do-while"
@@ -2466,7 +2520,7 @@ Model {
 	  BlockType		  Outport
 	  Name			  "Solver"
 	  SID			  "26"
-	  Position		  [1575, 78, 1605, 92]
+	  Position		  [1575, 248, 1605, 262]
 	  ZOrder		  892
 	  IconDisplay		  "Port number"
 	}
@@ -2474,7 +2528,7 @@ Model {
 	  BlockType		  Outport
 	  Name			  "EngOut"
 	  SID			  "25"
-	  Position		  [1350, 218, 1380, 232]
+	  Position		  [1350, 388, 1380, 402]
 	  ZOrder		  891
 	  Port			  "2"
 	  IconDisplay		  "Port number"
@@ -2483,7 +2537,7 @@ Model {
 	  BlockType		  Outport
 	  Name			  "Ndot"
 	  SID			  "27"
-	  Position		  [1350, 273, 1380, 287]
+	  Position		  [1350, 443, 1380, 457]
 	  ZOrder		  845
 	  Port			  "3"
 	  IconDisplay		  "Port number"
@@ -2638,9 +2692,9 @@ Model {
 	  Labels		  [0, 1]
 	  SrcBlock		  "Iterative NR Solver w JacobianCalc"
 	  SrcPort		  2
-	  Points		  [-256, 0; 0, -25]
+	  Points		  [-374, 0; 0, -25]
 	  Branch {
-	    ZOrder		    121
+	    ZOrder		    140
 	    Points		    [0, -295]
 	    DstBlock		    "All Ind"
 	    DstPort		    1
@@ -2669,7 +2723,7 @@ Model {
 	  ZOrder		  82
 	  SrcBlock		  "Bus\nCreator"
 	  SrcPort		  1
-	  Points		  [18, 0]
+	  Points		  [18, 0; 0, 75]
 	  Branch {
 	    ZOrder		    90
 	    DstBlock		    "From14"
@@ -2747,7 +2801,7 @@ Model {
 	  Labels		  [3, 1]
 	  SrcBlock		  "All Ind"
 	  SrcPort		  1
-	  Points		  [12, 0; 0, -90]
+	  Points		  [18, 0; 0, -255]
 	  DstBlock		  "Bus\nCreator"
 	  DstPort		  5
 	}
@@ -2757,7 +2811,7 @@ Model {
 	  Labels		  [3, 1]
 	  SrcBlock		  "All Ind"
 	  SrcPort		  2
-	  Points		  [19, 0; 0, -80]
+	  Points		  [41, 0; 0, -245]
 	  DstBlock		  "Bus\nCreator"
 	  DstPort		  6
 	}
@@ -2768,6 +2822,48 @@ Model {
 	  DstBlock		  "Engine Model"
 	  DstPort		  2
 	}
+	Line {
+	  ZOrder		  141
+	  SrcBlock		  "Constant1"
+	  SrcPort		  1
+	  DstBlock		  "Bus\nCreator"
+	  DstPort		  7
+	}
+	Line {
+	  ZOrder		  142
+	  SrcBlock		  "Constant6"
+	  SrcPort		  1
+	  DstBlock		  "Bus\nCreator"
+	  DstPort		  12
+	}
+	Line {
+	  ZOrder		  143
+	  SrcBlock		  "Constant5"
+	  SrcPort		  1
+	  DstBlock		  "Bus\nCreator"
+	  DstPort		  11
+	}
+	Line {
+	  ZOrder		  144
+	  SrcBlock		  "Constant4"
+	  SrcPort		  1
+	  DstBlock		  "Bus\nCreator"
+	  DstPort		  10
+	}
+	Line {
+	  ZOrder		  145
+	  SrcBlock		  "Constant3"
+	  SrcPort		  1
+	  DstBlock		  "Bus\nCreator"
+	  DstPort		  9
+	}
+	Line {
+	  ZOrder		  146
+	  SrcBlock		  "Constant2"
+	  SrcPort		  1
+	  DstBlock		  "Bus\nCreator"
+	  DstPort		  8
+	}
 	Annotation {
 	  SID			  "30"
 	  Name			  "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n<html"
@@ -2775,7 +2871,7 @@ Model {
 	  "e></head><body style=\" font-family:'Helvetica'; font-size:10px; font-weight:400; font-style:normal;\">\n<p style=\""
 	  " margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span"
 	  " style=\" font-size:16pt;\">Engine Model Call</span></p></body></html>"
-	  Position		  [1069, 143, 1241, 170]
+	  Position		  [1069, 313, 1241, 340]
 	  InternalMargins	  [0, 0, 0, 0]
 	  FixedHeight		  off
 	  FixedWidth		  off
@@ -2791,7 +2887,7 @@ Model {
 	  "e></head><body style=\" font-family:'Helvetica'; font-size:10px; font-weight:400; font-style:normal;\">\n<p style=\""
 	  " margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span"
 	  " style=\" font-size:14pt;\">Independent/Dependent Solver</span></p></body></html>"
-	  Position		  [1010, 419, 1280, 444]
+	  Position		  [1010, 589, 1280, 614]
 	  InternalMargins	  [0, 0, 0, 0]
 	  FixedHeight		  off
 	  FixedWidth		  off

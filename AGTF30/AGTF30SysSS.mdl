@@ -7,7 +7,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.147"
+    ComputedModelVersion    "1.150"
     NumModelReferences	    1
     ModelReference {
       ModelRefBlockPath	      "AGTF30SysSS/Engine Model|AGTF30_eng"
@@ -32,7 +32,7 @@ Model {
       $ObjectID		      2
       $ClassName	      "Simulink.WindowInfo"
       IsActive		      [1]
-      Location		      [308.0, 183.0, 1486.0, 764.0]
+      Location		      [227.0, 13.0, 1580.0, 755.0]
       Object {
 	$PropName		"ModelBrowserInfo"
 	$ObjectID		3
@@ -54,11 +54,11 @@ Model {
 	$ObjectID		5
 	$ClassName		"Simulink.EditorInfo"
 	IsActive		[1]
-	ViewObjType		"SimulinkTopLevel"
-	LoadSaveID		"0"
-	Extents			[1434.0, 562.0]
-	ZoomFactor		[0.77011494252873558]
-	Offset			[-28.529850746268721, 278.820895522388]
+	ViewObjType		"SimulinkSubsys"
+	LoadSaveID		"134"
+	Extents			[1528.0, 553.0]
+	ZoomFactor		[1.5]
+	Offset			[0.0, 135.33333333333331]
       }
     }
   }
@@ -68,9 +68,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "jwchapm2"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Fri May 29 16:26:48 2020"
-  RTWModifiedTimeStamp	  512670406
-  ModelVersionFormat	  "1.%<AutoIncrement:147>"
+  LastModifiedDate	  "Tue Jun 02 11:04:53 2020"
+  RTWModifiedTimeStamp	  512996684
+  ModelVersionFormat	  "1.%<AutoIncrement:150>"
   ConfigurationManager	  "none"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -807,6 +807,14 @@ Model {
       BusSelectionMode	      off
     }
     Block {
+      BlockType		      Display
+      Format		      "short"
+      Decimation	      "10"
+      Floating		      off
+      Lockdown		      off
+      SampleTime	      "-1"
+    }
+    Block {
       BlockType		      From
       GotoTag		      "A"
       IconDisplay	      "Tag"
@@ -943,8 +951,8 @@ Model {
   }
   System {
     Name		    "AGTF30SysSS"
-    Location		    [308, 183, 1794, 947]
-    Open		    on
+    Location		    [227, 13, 1807, 768]
+    Open		    off
     ModelBrowserVisibility  off
     ModelBrowserWidth	    200
     ScreenColor		    "white"
@@ -955,9 +963,9 @@ Model {
     TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
     TiledPageScale	    1
     ShowPageBoundaries	    off
-    ZoomFactor		    "77"
+    ZoomFactor		    "100"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    "374"
+    SIDHighWatermark	    "388"
     Block {
       BlockType		      BusSelector
       Name		      "Bus\nSelector"
@@ -971,6 +979,53 @@ Model {
       Port {
 	PortNumber		1
 	Name			"<Converged>"
+	RTWStorageClass		"Auto"
+	DataLoggingNameMode	"SignalName"
+      }
+    }
+    Block {
+      BlockType		      BusSelector
+      Name		      "Bus\nSelector1"
+      SID		      "381"
+      Ports		      [1, 6]
+      Position		      [1230, 732, 1235, 883]
+      ZOrder		      966
+      ShowName		      off
+      OutputSignals	      "EngOut.Data.HPC_Data.s_C_Wc,EngOut.Data.HPC_Data.s_C_PR,EngOut.Data.HPC_Data.s_C_Eff,EngOut"
+      ".Data.LPC_Data.s_C_Wc,EngOut.Data.LPC_Data.s_C_PR,EngOut.Data.LPC_Data.s_C_Eff"
+      Port {
+	PortNumber		1
+	Name			"<s_C_Wc>"
+	RTWStorageClass		"Auto"
+	DataLoggingNameMode	"SignalName"
+      }
+      Port {
+	PortNumber		2
+	Name			"<s_C_PR>"
+	RTWStorageClass		"Auto"
+	DataLoggingNameMode	"SignalName"
+      }
+      Port {
+	PortNumber		3
+	Name			"<s_C_Eff>"
+	RTWStorageClass		"Auto"
+	DataLoggingNameMode	"SignalName"
+      }
+      Port {
+	PortNumber		4
+	Name			"<s_C_Wc>"
+	RTWStorageClass		"Auto"
+	DataLoggingNameMode	"SignalName"
+      }
+      Port {
+	PortNumber		5
+	Name			"<s_C_PR>"
+	RTWStorageClass		"Auto"
+	DataLoggingNameMode	"SignalName"
+      }
+      Port {
+	PortNumber		6
+	Name			"<s_C_Eff>"
 	RTWStorageClass		"Auto"
 	DataLoggingNameMode	"SignalName"
       }
@@ -1822,6 +1877,60 @@ Model {
       }
     }
     Block {
+      BlockType		      Display
+      Name		      "Display"
+      SID		      "382"
+      Ports		      [1]
+      Position		      [1400, 730, 1490, 760]
+      ZOrder		      967
+      Decimation	      "1"
+    }
+    Block {
+      BlockType		      Display
+      Name		      "Display1"
+      SID		      "383"
+      Ports		      [1]
+      Position		      [1300, 755, 1390, 785]
+      ZOrder		      968
+      Decimation	      "1"
+    }
+    Block {
+      BlockType		      Display
+      Name		      "Display2"
+      SID		      "384"
+      Ports		      [1]
+      Position		      [1440, 790, 1530, 820]
+      ZOrder		      969
+      Decimation	      "1"
+    }
+    Block {
+      BlockType		      Display
+      Name		      "Display3"
+      SID		      "385"
+      Ports		      [1]
+      Position		      [1460, 840, 1550, 870]
+      ZOrder		      970
+      Decimation	      "1"
+    }
+    Block {
+      BlockType		      Display
+      Name		      "Display4"
+      SID		      "386"
+      Ports		      [1]
+      Position		      [1340, 855, 1430, 885]
+      ZOrder		      971
+      Decimation	      "1"
+    }
+    Block {
+      BlockType		      Display
+      Name		      "Display5"
+      SID		      "387"
+      Ports		      [1]
+      Position		      [1255, 895, 1345, 925]
+      ZOrder		      972
+      Decimation	      "1"
+    }
+    Block {
       BlockType		      ModelReference
       Name		      "Engine Model"
       SID		      "7"
@@ -1830,7 +1939,7 @@ Model {
       ZOrder		      810
       ModelNameDialog	      "AGTF30_eng.mdl"
       SimulationMode	      "Normal"
-      ModelReferenceVersion   "1.306"
+      ModelReferenceVersion   "1.312"
       List {
 	ListType		InputPortNames
 	port0			"Sys_In"
@@ -2037,8 +2146,8 @@ Model {
       RequestExecContextInheritance off
       System {
 	Name			"Inp"
-	Location		[308, 183, 1794, 947]
-	Open			off
+	Location		[227, 13, 1807, 768]
+	Open			on
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
 	ScreenColor		"white"
@@ -2049,7 +2158,7 @@ Model {
 	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
 	TiledPageScale		1
 	ShowPageBoundaries	off
-	ZoomFactor		"212"
+	ZoomFactor		"150"
 	Block {
 	  BlockType		  Inport
 	  Name			  "Wf"
@@ -2099,11 +2208,11 @@ Model {
 	  BlockType		  BusCreator
 	  Name			  "Bus\nCreator"
 	  SID			  "352"
-	  Ports			  [6, 1]
-	  Position		  [340, 25, 345, 255]
+	  Ports			  [12, 1]
+	  Position		  [340, 25, 345, 495]
 	  ZOrder		  909
 	  ShowName		  off
-	  Inputs		  "6"
+	  Inputs		  "12"
 	  DisplayOption		  "bar"
 	}
 	Block {
@@ -2180,10 +2289,100 @@ Model {
 	  }
 	}
 	Block {
+	  BlockType		  Constant
+	  Name			  "s_Eff_HPC"
+	  SID			  "375"
+	  Position		  [155, 352, 240, 368]
+	  ZOrder		  1197
+	  ShowName		  off
+	  Value			  "0"
+	  Port {
+	    PortNumber		    1
+	    Name		    "s_Eff_HPC"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	}
+	Block {
+	  BlockType		  Constant
+	  Name			  "s_Eff_LPC"
+	  SID			  "376"
+	  Position		  [140, 472, 240, 488]
+	  ZOrder		  1200
+	  ShowName		  off
+	  Value			  "0"
+	  Port {
+	    PortNumber		    1
+	    Name		    "s_Eff_LPC"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	}
+	Block {
+	  BlockType		  Constant
+	  Name			  "s_PR_HPC"
+	  SID			  "377"
+	  Position		  [80, 312, 185, 328]
+	  ZOrder		  1196
+	  ShowName		  off
+	  Value			  "0"
+	  Port {
+	    PortNumber		    1
+	    Name		    "s_PR_HPC"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	}
+	Block {
+	  BlockType		  Constant
+	  Name			  "s_PR_LPC"
+	  SID			  "378"
+	  Position		  [95, 430, 175, 450]
+	  ZOrder		  1199
+	  ShowName		  off
+	  Value			  "0"
+	  Port {
+	    PortNumber		    1
+	    Name		    "s_PR_LPC"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	}
+	Block {
+	  BlockType		  Constant
+	  Name			  "s_Wc_HPC"
+	  SID			  "379"
+	  Position		  [155, 272, 240, 288]
+	  ZOrder		  1195
+	  ShowName		  off
+	  Value			  "0"
+	  Port {
+	    PortNumber		    1
+	    Name		    "s_Wc_HPC"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	}
+	Block {
+	  BlockType		  Constant
+	  Name			  "s_Wc_LPC"
+	  SID			  "380"
+	  Position		  [25, 392, 105, 408]
+	  ZOrder		  1198
+	  ShowName		  off
+	  Value			  "0"
+	  Port {
+	    PortNumber		    1
+	    Name		    "s_Wc_LPC"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	}
+	Block {
 	  BlockType		  Outport
 	  Name			  "EngInputs"
 	  SID			  "136"
-	  Position		  [405, 133, 435, 147]
+	  Position		  [395, 253, 425, 267]
 	  ZOrder		  905
 	  IconDisplay		  "Port number"
 	}
@@ -2265,6 +2464,70 @@ Model {
 	  DstBlock		  "Sum"
 	  DstPort		  2
 	}
+	Line {
+	  Name			  "s_Wc_HPC"
+	  ZOrder		  372
+	  Labels		  [1, 1]
+	  SrcBlock		  "s_Wc_HPC"
+	  SrcPort		  1
+	  DstBlock		  "Bus\nCreator"
+	  DstPort		  7
+	}
+	Line {
+	  Name			  "s_PR_HPC"
+	  ZOrder		  373
+	  Labels		  [1, 1]
+	  SrcBlock		  "s_PR_HPC"
+	  SrcPort		  1
+	  DstBlock		  "Bus\nCreator"
+	  DstPort		  8
+	}
+	Line {
+	  Name			  "s_Eff_HPC"
+	  ZOrder		  374
+	  Labels		  [1, 1]
+	  SrcBlock		  "s_Eff_HPC"
+	  SrcPort		  1
+	  DstBlock		  "Bus\nCreator"
+	  DstPort		  9
+	}
+	Line {
+	  Name			  "s_Wc_LPC"
+	  ZOrder		  375
+	  Labels		  [1, 1]
+	  SrcBlock		  "s_Wc_LPC"
+	  SrcPort		  1
+	  DstBlock		  "Bus\nCreator"
+	  DstPort		  10
+	}
+	Line {
+	  Name			  "s_PR_LPC"
+	  ZOrder		  376
+	  Labels		  [1, 0]
+	  SrcBlock		  "s_PR_LPC"
+	  SrcPort		  1
+	  DstBlock		  "Bus\nCreator"
+	  DstPort		  11
+	}
+	Line {
+	  Name			  "s_Eff_LPC"
+	  ZOrder		  377
+	  Labels		  [1, 0]
+	  SrcBlock		  "s_Eff_LPC"
+	  SrcPort		  1
+	  DstBlock		  "Bus\nCreator"
+	  DstPort		  12
+	}
+	Annotation {
+	  SID			  "388"
+	  Name			  "Note: final scalars will be (s_Wc_HPC + 1)* CurrentScalar"
+	  Position		  [396, 380, 664, 395]
+	  InternalMargins	  [0, 0, 0, 0]
+	  FixedHeight		  off
+	  FixedWidth		  off
+	  HorizontalAlignment	  "left"
+	  VerticalAlignment	  "top"
+	}
       }
     }
     Block {
@@ -2277,7 +2540,7 @@ Model {
       RequestExecContextInheritance off
       System {
 	Name			"OutputFormat"
-	Location		[308, 183, 1794, 947]
+	Location		[331, 267, 1817, 1031]
 	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
@@ -3022,7 +3285,7 @@ Model {
       RequestExecContextInheritance off
       System {
 	Name			"SystemData"
-	Location		[308, 183, 1794, 947]
+	Location		[331, 267, 1817, 1031]
 	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
@@ -3034,7 +3297,7 @@ Model {
 	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
 	TiledPageScale		1
 	ShowPageBoundaries	off
-	ZoomFactor		"77"
+	ZoomFactor		"125"
 	Block {
 	  BlockType		  Inport
 	  Name			  "Eng"
@@ -4382,8 +4645,18 @@ Model {
       }
       Branch {
 	ZOrder			445
-	DstBlock		"SystemData"
-	DstPort			1
+	Points			[62, 0]
+	Branch {
+	  ZOrder		  611
+	  Points		  [0, -120]
+	  DstBlock		  "Bus\nSelector1"
+	  DstPort		  1
+	}
+	Branch {
+	  ZOrder		  610
+	  DstBlock		  "SystemData"
+	  DstPort		  1
+	}
       }
     }
     Line {
@@ -4434,6 +4707,64 @@ Model {
       SrcPort		      1
       DstBlock		      "Inp"
       DstPort		      3
+    }
+    Line {
+      Name		      "<s_C_Wc>"
+      ZOrder		      612
+      Labels		      [0, 0]
+      SrcBlock		      "Bus\nSelector1"
+      SrcPort		      1
+      DstBlock		      "Display"
+      DstPort		      1
+    }
+    Line {
+      Name		      "<s_C_PR>"
+      ZOrder		      613
+      Labels		      [0, 0]
+      SrcBlock		      "Bus\nSelector1"
+      SrcPort		      2
+      DstBlock		      "Display1"
+      DstPort		      1
+    }
+    Line {
+      Name		      "<s_C_Eff>"
+      ZOrder		      614
+      Labels		      [0, 0]
+      SrcBlock		      "Bus\nSelector1"
+      SrcPort		      3
+      Points		      [42, 0; 0, 10]
+      DstBlock		      "Display2"
+      DstPort		      1
+    }
+    Line {
+      Name		      "<s_C_Wc>"
+      ZOrder		      615
+      Labels		      [0, 0]
+      SrcBlock		      "Bus\nSelector1"
+      SrcPort		      4
+      Points		      [68, 0; 0, 21; 137, 0]
+      DstBlock		      "Display3"
+      DstPort		      1
+    }
+    Line {
+      Name		      "<s_C_PR>"
+      ZOrder		      616
+      Labels		      [0, 0]
+      SrcBlock		      "Bus\nSelector1"
+      SrcPort		      5
+      Points		      [32, 0; 0, 25]
+      DstBlock		      "Display4"
+      DstPort		      1
+    }
+    Line {
+      Name		      "<s_C_Eff>"
+      ZOrder		      617
+      Labels		      [0, 0]
+      SrcBlock		      "Bus\nSelector1"
+      SrcPort		      6
+      Points		      [5, 0; 0, 40]
+      DstBlock		      "Display5"
+      DstPort		      1
     }
     Annotation {
       SID		      "74"
