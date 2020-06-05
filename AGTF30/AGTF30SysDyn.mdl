@@ -7,7 +7,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.674"
+    ComputedModelVersion    "1.675"
     NumModelReferences	    1
     ModelReference {
       ModelRefBlockPath	      "AGTF30SysDyn/EngineSystem/EngineDW/Engine Model|AGTF30_eng"
@@ -32,7 +32,7 @@ Model {
       $ObjectID		      2
       $ClassName	      "Simulink.WindowInfo"
       IsActive		      [1]
-      Location		      [224.0, 170.0, 1519.0, 857.0]
+      Location		      [347.0, 19.0, 1519.0, 857.0]
       Object {
 	$PropName		"ModelBrowserInfo"
 	$ObjectID		3
@@ -54,11 +54,11 @@ Model {
 	$ObjectID		5
 	$ClassName		"Simulink.EditorInfo"
 	IsActive		[1]
-	ViewObjType		"SimulinkSubsys"
-	LoadSaveID		"81"
+	ViewObjType		"SimulinkTopLevel"
+	LoadSaveID		"0"
 	Extents			[1467.0, 655.0]
-	ZoomFactor		[1.75]
-	Offset			[1139.5885281385288, 1176.4891774891773]
+	ZoomFactor		[0.66489925768822911]
+	Offset			[-225.67464114832524, 80.944178628389153]
       }
     }
   }
@@ -68,9 +68,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "jwchapm2"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Tue Jun 02 11:15:38 2020"
-  RTWModifiedTimeStamp	  512997334
-  ModelVersionFormat	  "1.%<AutoIncrement:674>"
+  LastModifiedDate	  "Fri Jun 05 07:42:34 2020"
+  RTWModifiedTimeStamp	  513243701
+  ModelVersionFormat	  "1.%<AutoIncrement:675>"
   ConfigurationManager	  "none"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -1218,8 +1218,8 @@ Model {
   }
   System {
     Name		    "AGTF30SysDyn"
-    Location		    [123, 18, 1642, 875]
-    Open		    off
+    Location		    [347, 19, 1866, 876]
+    Open		    on
     ModelBrowserVisibility  off
     ModelBrowserWidth	    200
     ScreenColor		    "white"
@@ -1232,7 +1232,7 @@ Model {
     ShowPageBoundaries	    off
     ZoomFactor		    "66"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    "1206"
+    SIDHighWatermark	    "1207"
     Block {
       BlockType		      SubSystem
       Name		      "Actuators"
@@ -1768,8 +1768,8 @@ Model {
       RequestExecContextInheritance off
       System {
 	Name			"Control System"
-	Location		[224, 170, 1743, 1027]
-	Open			on
+	Location		[347, 19, 1866, 876]
+	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
 	ScreenColor		"white"
@@ -8966,7 +8966,7 @@ Model {
       RequestExecContextInheritance off
       System {
 	Name			"Sensors"
-	Location		[350, 182, 1697, 955]
+	Location		[347, 19, 1866, 876]
 	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
@@ -8978,7 +8978,7 @@ Model {
 	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
 	TiledPageScale		1
 	ShowPageBoundaries	off
-	ZoomFactor		"80"
+	ZoomFactor		"175"
 	Block {
 	  BlockType		  Inport
 	  Name			  "EngOut"
@@ -9033,11 +9033,11 @@ Model {
 	  BlockType		  BusCreator
 	  Name			  "Bus\nCreator2"
 	  SID			  "242"
-	  Ports			  [5, 1]
-	  Position		  [585, 239, 590, 541]
+	  Ports			  [6, 1]
+	  Position		  [585, 241, 590, 599]
 	  ZOrder		  888
 	  ShowName		  off
-	  Inputs		  "5"
+	  Inputs		  "6"
 	  DisplayOption		  "bar"
 	  Port {
 	    PortNumber		    1
@@ -9067,11 +9067,11 @@ Model {
 	  BlockType		  BusSelector
 	  Name			  "Bus\nSelector"
 	  SID			  "162"
-	  Ports			  [1, 5]
-	  Position		  [330, 241, 335, 539]
+	  Ports			  [1, 6]
+	  Position		  [330, 243, 335, 597]
 	  ZOrder		  863
 	  ShowName		  off
-	  OutputSignals		  "Amb.Pa,S2.Pt,S25.Pt,S36.Ps,S5.Pt"
+	  OutputSignals		  "Amb.Pa,S2.Pt,S25.Pt,S36.Ps,S5.Pt,S13.Pt"
 	  Port {
 	    PortNumber		    1
 	    Name		    "<Pa>"
@@ -9098,6 +9098,12 @@ Model {
 	  }
 	  Port {
 	    PortNumber		    5
+	    Name		    "<Pt>"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	  Port {
+	    PortNumber		    6
 	    Name		    "<Pt>"
 	    RTWStorageClass	    "Auto"
 	    DataLoggingNameMode	    "SignalName"
@@ -9312,6 +9318,35 @@ Model {
 	  Port {
 	    PortNumber		    1
 	    Name		    "Ps3sen"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Pt13 sensor"
+	  SID			  "1207"
+	  Ports			  [1, 1]
+	  Position		  [380, 557, 480, 583]
+	  ZOrder		  925
+	  LibraryVersion	  "1.342"
+	  SourceBlock		  "Lib_Cntrl_FirstOrderSensor_TMATS/1st order  Sensor"
+	  SourceType		  "T-MATS: 1st order sensor Library Block"
+	  ContentPreviewEnabled	  off
+	  IC_M			  "MWS.In.Sensor.ICP5"
+	  Sen_Max_M		  "MWS.Sensor.P5.Max"
+	  Sen_Min_M		  "MWS.Sensor.P5.Min"
+	  Gain_M		  "1"
+	  Tau_M			  "MWS.Sensor.P5.Tau"
+	  GN_EN_M		  off
+	  GN_NST_M		  "MWS.In.Ts"
+	  GN_C_M		  "1"
+	  GN_MinNoise_M		  "0.3"
+	  F_Gain_M		  "1"
+	  F_Drift_M		  "0"
+	  Port {
+	    PortNumber		    1
+	    Name		    "P13sen"
 	    RTWStorageClass	    "Auto"
 	    DataLoggingNameMode	    "SignalName"
 	  }
@@ -9551,7 +9586,7 @@ Model {
 	  Labels		  [-1, 0]
 	  SrcBlock		  "Bus\nCreator2"
 	  SrcPort		  1
-	  Points		  [429, 0; 0, 155]
+	  Points		  [0, -18; 429, 0; 0, 143]
 	  DstBlock		  "Bus\nCreator"
 	  DstPort		  1
 	}
@@ -9586,7 +9621,7 @@ Model {
 	Line {
 	  Name			  "<Pt>"
 	  ZOrder		  147
-	  Labels		  [1, 1]
+	  Labels		  [-1, 0]
 	  SrcBlock		  "Bus\nSelector"
 	  SrcPort		  3
 	  DstBlock		  "Pt25 sensor"
@@ -9595,7 +9630,7 @@ Model {
 	Line {
 	  Name			  "<Pt>"
 	  ZOrder		  142
-	  Labels		  [1, 1]
+	  Labels		  [-1, 0]
 	  SrcBlock		  "Bus\nSelector"
 	  SrcPort		  5
 	  DstBlock		  "Pt5 sensor"
@@ -9743,7 +9778,7 @@ Model {
 	  Points		  [111, 0]
 	  Branch {
 	    ZOrder		    335
-	    Points		    [0, -210]
+	    Points		    [0, -180]
 	    DstBlock		    "Bus\nSelector"
 	    DstPort		    1
 	  }
@@ -9814,6 +9849,24 @@ Model {
 	  SrcPort		  1
 	  DstBlock		  "Bus\nCreator2"
 	  DstPort		  4
+	}
+	Line {
+	  Name			  "P13sen"
+	  ZOrder		  345
+	  Labels		  [1, 1]
+	  SrcBlock		  "Pt13 sensor"
+	  SrcPort		  1
+	  DstBlock		  "Bus\nCreator2"
+	  DstPort		  6
+	}
+	Line {
+	  Name			  "<Pt>"
+	  ZOrder		  346
+	  Labels		  [0, 0]
+	  SrcBlock		  "Bus\nSelector"
+	  SrcPort		  6
+	  DstBlock		  "Pt13 sensor"
+	  DstPort		  1
 	}
 	Annotation {
 	  SID			  "1189"
