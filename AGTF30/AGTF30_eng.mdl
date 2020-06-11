@@ -34,7 +34,7 @@ Model {
       BusOutputAsStruct	      "off"
     }
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.312"
+    ComputedModelVersion    "1.321"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -79,10 +79,10 @@ Model {
 	$ClassName		"Simulink.EditorInfo"
 	IsActive		[1]
 	ViewObjType		"SimulinkSubsys"
-	LoadSaveID		"132"
+	LoadSaveID		"536"
 	Extents			[1886.0, 846.0]
-	ZoomFactor		[2.0]
-	Offset			[0.0, 524.0]
+	ZoomFactor		[0.57122905027932969]
+	Offset			[-920.82640586797049, 38.491442542787283]
       }
     }
   }
@@ -92,9 +92,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "jwchapm2"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Tue Jun 02 11:03:10 2020"
-  RTWModifiedTimeStamp	  512996589
-  ModelVersionFormat	  "1.%<AutoIncrement:312>"
+  LastModifiedDate	  "Thu Jun 11 15:32:32 2020"
+  RTWModifiedTimeStamp	  513790344
+  ModelVersionFormat	  "1.%<AutoIncrement:321>"
   ConfigurationManager	  "none"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -827,6 +827,17 @@ Model {
       PreserveConstantTs      off
     }
     Block {
+      BlockType		      DataTypeConversion
+      OutMin		      "[]"
+      OutMax		      "[]"
+      OutDataTypeStr	      "Inherit: Inherit via back propagation"
+      LockScale		      off
+      ConvertRealWorld	      "Real World Value (RWV)"
+      RndMeth		      "Zero"
+      SaturateOnIntegerOverflow	on
+      SampleTime	      "-1"
+    }
+    Block {
       BlockType		      Demux
       Outputs		      "4"
       DisplayOption	      "none"
@@ -839,6 +850,19 @@ Model {
       Floating		      off
       Lockdown		      off
       SampleTime	      "-1"
+    }
+    Block {
+      BlockType		      EnablePort
+      StatesWhenEnabling      "held"
+      PropagateVarSize	      "Only when enabling"
+      ShowOutputPort	      off
+      ZeroCross		      on
+      PortDimensions	      "1"
+      SampleTime	      "-1"
+      OutMin		      "[]"
+      OutMax		      "[]"
+      OutDataTypeStr	      "double"
+      Interpolate	      on
     }
     Block {
       BlockType		      From
@@ -886,6 +910,15 @@ Model {
       Interpolate	      on
     }
     Block {
+      BlockType		      Logic
+      Operator		      "AND"
+      Inputs		      "2"
+      IconShape		      "rectangular"
+      AllPortsSameDT	      on
+      OutDataTypeStr	      "Inherit: Logical (see Configuration Parameters: Optimization)"
+      SampleTime	      "-1"
+    }
+    Block {
       BlockType		      Mux
       Inputs		      "4"
       DisplayOption	      "none"
@@ -924,6 +957,22 @@ Model {
       RndMeth		      "Zero"
       SaturateOnIntegerOverflow	on
       SampleTime	      "-1"
+    }
+    Block {
+      BlockType		      RelationalOperator
+      Operator		      ">="
+      InputSameDT	      on
+      OutDataTypeStr	      "Inherit: Logical (see Configuration Parameters: Optimization)"
+      ZeroCross		      on
+      SampleTime	      "-1"
+    }
+    Block {
+      BlockType		      S-Function
+      FunctionName	      "system"
+      SFunctionModules	      "''"
+      PortCounts	      "[]"
+      SFunctionDeploymentMode off
+      EnableBusSupport	      off
     }
     Block {
       BlockType		      SubSystem
@@ -993,7 +1042,7 @@ Model {
     ShowPageBoundaries	    off
     ZoomFactor		    "490"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    "1292"
+    SIDHighWatermark	    "1305"
     Block {
       BlockType		      Inport
       Name		      "Sys_In"
@@ -1031,7 +1080,7 @@ Model {
       System {
 	Name			"Engine"
 	Location		[-9, 0, 1929, 1048]
-	Open			off
+	Open			on
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
 	ScreenColor		"white"
@@ -1042,12 +1091,12 @@ Model {
 	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
 	TiledPageScale		1
 	ShowPageBoundaries	off
-	ZoomFactor		"200"
+	ZoomFactor		"57"
 	Block {
 	  BlockType		  Inport
 	  Name			  "Sys_In"
 	  SID			  "537"
-	  Position		  [115, 968, 145, 982]
+	  Position		  [105, 978, 135, 992]
 	  ZOrder		  812
 	  IconDisplay		  "Port number"
 	}
@@ -3759,14 +3808,14 @@ Model {
 	  BlockType		  SubSystem
 	  Name			  "Core"
 	  SID			  "132"
-	  Ports			  [6, 7]
+	  Ports			  [7, 7]
 	  Position		  [670, 242, 770, 398]
 	  ZOrder		  650
 	  RequestExecContextInheritance	off
 	  System {
 	    Name		    "Core"
 	    Location		    [-9, 0, 1929, 1048]
-	    Open		    on
+	    Open		    off
 	    ModelBrowserVisibility  off
 	    ModelBrowserWidth	    200
 	    ScreenColor		    "white"
@@ -3777,7 +3826,7 @@ Model {
 	    TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
 	    TiledPageScale	    1
 	    ShowPageBoundaries	    off
-	    ZoomFactor		    "200"
+	    ZoomFactor		    "81"
 	    Block {
 	      BlockType		      Inport
 	      Name		      "Wf"
@@ -3791,7 +3840,7 @@ Model {
 	      BlockType		      Inport
 	      Name		      "FlwIn"
 	      SID		      "133"
-	      Position		      [105, 668, 135, 682]
+	      Position		      [105, 663, 135, 677]
 	      ZOrder		      650
 	      ForegroundColor	      "blue"
 	      Port		      "2"
@@ -3835,6 +3884,16 @@ Model {
 	      ZOrder		      1915
 	      ForegroundColor	      "red"
 	      Port		      "6"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "alpha"
+	      SID		      "1301"
+	      Position		      [260, 333, 290, 347]
+	      ZOrder		      1925
+	      ForegroundColor	      "red"
+	      Port		      "7"
 	      IconDisplay	      "Port number"
 	    }
 	    Block {
@@ -3894,6 +3953,2501 @@ Model {
 	      DisplayOption	      "bar"
 	    }
 	    Block {
+	      BlockType		      SubSystem
+	      Name		      "CompressorVG"
+	      SID		      "1293"
+	      Ports		      [5, 6]
+	      Position		      [195, 655, 350, 800]
+	      ZOrder		      1918
+	      RequestExecContextInheritance off
+	      Object {
+		$PropName		"MaskObject"
+		$ObjectID		31
+		$ClassName		"Simulink.Mask"
+		Type			"T-MATS: CompressorVG Library Block"
+		Description		"This block simulates the performance of a compressor using basic thermodynamic equations, properties, "
+		"and table lookups.\n\nThis block also takes into account 3 dimensional performance maps. Shifting between the tables"
+		" can be completed using the Alpha term. This feature can be used for simulation of variable geometries."
+		Help			"web(which('Turbo_TMATS_CmpVG.html'),'-helpbrowser')"
+		Initialization		"MSK_CompInit_TMATS"
+		SelfModifiable		"on"
+		Array {
+		  Type			  "Simulink.MaskParameter"
+		  Dimension		  33
+		  Object {
+		    $ObjectID		    32
+		    Type		    "edit"
+		    Name		    "X_C_RlineVec_M"
+		    Prompt		    "X_C_RlineVec_M - Compressor Map Rline Vector (X-axis)(nx1)"
+		    Value		    "MWS.HPC.RVec"
+		  }
+		  Object {
+		    $ObjectID		    33
+		    Type		    "edit"
+		    Name		    "Z_C_AlphaVec_M"
+		    Prompt		    "Z_C_Map_AlphaVec_M - Compressor Alpha Vector (Z-axis)(rx1)"
+		    Value		    "MWS.HPC.Alpha"
+		  }
+		  Object {
+		    $ObjectID		    34
+		    Type		    "edit"
+		    Name		    "Y_C_Map_NcVec_M"
+		    Prompt		    "Y_C_Map_NcVec_M - Compressor Map Corrected Speed Vector (Y-axis)(mx1)"
+		    Value		    "MWS.HPC.NcVec"
+		  }
+		  Object {
+		    $ObjectID		    35
+		    Type		    "edit"
+		    Name		    "T_C_Map_WcArray_M"
+		    Prompt		    "T_C_Map_WcArray_M - Compressor Map Flow Array (Wc = f(Nc, Rline,Alpha))(mxnxr)"
+		    Value		    "MWS.HPC.WcMap"
+		  }
+		  Object {
+		    $ObjectID		    36
+		    Type		    "edit"
+		    Name		    "T_C_Map_PRArray_M"
+		    Prompt		    "T_C_Map_PRArray_M - Compressor Map Pressure Ratio Array (PR = f(Nc, Rline,Alpha))(mxnxr)"
+		    Value		    "MWS.HPC.PRMap"
+		  }
+		  Object {
+		    $ObjectID		    37
+		    Type		    "edit"
+		    Name		    "T_C_Map_EffArray_M"
+		    Prompt		    "T_C_Map_EffArray_M - Compressor Map Efficiency Array (Eff = f(Nc, Rline,Alpha)(mxnxr)"
+		    Value		    "MWS.HPC.EffMap"
+		  }
+		  Object {
+		    $ObjectID		    38
+		    Type		    "edit"
+		    Name		    "s_C_Nc_M"
+		    Prompt		    "s_C_Nc_M - Corrected Speed Scalar Constant (C_Nc)"
+		    Value		    "MWS.HPC.s_Nc"
+		  }
+		  Object {
+		    $ObjectID		    39
+		    Type		    "edit"
+		    Name		    "s_C_Wc_M"
+		    Prompt		    "s_C_Wc_M - Flow Scalar Constant (C_Wc)"
+		    Value		    "MWS.HPC.s_Wc"
+		  }
+		  Object {
+		    $ObjectID		    40
+		    Type		    "edit"
+		    Name		    "s_C_PR_M"
+		    Prompt		    "s_C_PR_M - Pressure Ratio Scalar Constant (C_PR)"
+		    Value		    "MWS.HPC.s_PR"
+		  }
+		  Object {
+		    $ObjectID		    41
+		    Type		    "edit"
+		    Name		    "s_C_Eff_M"
+		    Prompt		    "s_C_Eff_M - Efficiency Scalar Constant (C_Eff)"
+		    Value		    "MWS.HPC.s_Eff"
+		  }
+		  Object {
+		    $ObjectID		    42
+		    Type		    "checkbox"
+		    Name		    "SL_M"
+		    Prompt		    "Include surge line"
+		    Value		    "off"
+		  }
+		  Object {
+		    $ObjectID		    43
+		    Type		    "radiobutton"
+		    Array {
+		    Type		    "Cell"
+		    Dimension		    3
+		    Cell		    "none"
+		    Cell		    "user defined"
+		    Cell		    "iDesign"
+		    PropName		    "TypeOptions"
+		    }
+		    Name		    "Scale_M"
+		    Prompt		    "Scalars"
+		    Value		    "none"
+		  }
+		  Object {
+		    $ObjectID		    44
+		    Type		    "checkbox"
+		    Name		    "CBLDEN_M"
+		    Prompt		    "CBLDEN_M - Customer Bleed Enable [0 - off, 1 - on]"
+		    Value		    "off"
+		    Callback		    "MSK_SEC_Enables_TMATS('CBLDEN_M',[14 15 16],'en')\n"
+		  }
+		  Object {
+		    $ObjectID		    45
+		    Type		    "edit"
+		    Name		    "C_CBD_M"
+		    Prompt		    "C_CBD_M - Customer or Flow based Bleed Demand[pps] (cbx1)"
+		    Value		    "0"
+		    Enabled		    "off"
+		  }
+		  Object {
+		    $ObjectID		    46
+		    Type		    "edit"
+		    Name		    "C_CBFht_M"
+		    Prompt		    "C_CBFht_M - Customer or Flow based Bleed Fractional enthalpy[frac] (cbx1)"
+		    Value		    "0.5"
+		    Enabled		    "off"
+		  }
+		  Object {
+		    $ObjectID		    47
+		    Type		    "edit"
+		    Name		    "C_CBFPt_M"
+		    Prompt		    "C_CBFPt_M - Customer or Flow based Bleed Fractional Total Pressure[frac] (cbx1)"
+		    Value		    "0.5"
+		    Enabled		    "off"
+		  }
+		  Object {
+		    $ObjectID		    48
+		    Type		    "checkbox"
+		    Name		    "FBLDEN_M"
+		    Prompt		    "FBLDEN_M - Fractional Bleed Enable [0 - off, 1 - on]"
+		    Value		    "on"
+		    Callback		    "MSK_SEC_Enables_TMATS('FBLDEN_M',[18 19 20],'en')"
+		  }
+		  Object {
+		    $ObjectID		    49
+		    Type		    "edit"
+		    Name		    "C_FBD_M"
+		    Prompt		    "C_FBD_M - Fractional Bleed Demand[frac] (bx1)"
+		    Value		    "MWS.HPC.FBD"
+		    Enabled		    "off"
+		  }
+		  Object {
+		    $ObjectID		    50
+		    Type		    "edit"
+		    Name		    "C_BFht_M"
+		    Prompt		    "C_BFht_M - Engine Bleed Fractional Enthalpy[frac] (bx1)"
+		    Value		    "MWS.HPC.BFht"
+		    Enabled		    "off"
+		  }
+		  Object {
+		    $ObjectID		    51
+		    Type		    "edit"
+		    Name		    "C_BFPt_M"
+		    Prompt		    "C_BFPt_M - Engine Bleed Fractional Total Pressure[frac] (bx1)"
+		    Value		    "MWS.HPC.BFPt"
+		    Enabled		    "off"
+		  }
+		  Object {
+		    $ObjectID		    52
+		    Type		    "checkbox"
+		    Name		    "DefSMEn_M"
+		    Prompt		    "DefSMEn_M - Use map default (Rline = 1) surge line"
+		    Value		    "off"
+		    Callback		    "MSK_SEC_Enables_TMATS('DefSMEn_M',[24 25],'dis')\nMSK_SEC_Enables_TMATS('DefSMEn_M',[23],'en')"
+		  }
+		  Object {
+		    $ObjectID		    53
+		    Type		    "checkbox"
+		    Name		    "SMNEn_M"
+		    Prompt		    "SMNEn_M - Use constant Nc-based instead of constant Wc-based surge margin calculation"
+		    Value		    "off"
+		  }
+		  Object {
+		    $ObjectID		    54
+		    Type		    "edit"
+		    Name		    "SRline_M"
+		    Prompt		    "SRline_M - Rline defined as surge line"
+		    Value		    "1"
+		  }
+		  Object {
+		    $ObjectID		    55
+		    Type		    "edit"
+		    Name		    "X_C_Map_WcSurgeVec_M"
+		    Prompt		    "X_C_Map_WcSurgeVec_M - map Compensated flow surge vector (Vec = f(Alpha)) (sxr)"
+		    Value		    "MWS.HPC.WcSM"
+		    Enabled		    "off"
+		  }
+		  Object {
+		    $ObjectID		    56
+		    Type		    "edit"
+		    Name		    "T_C_Map_PRSurgeVec_M"
+		    Prompt		    "T_C_Map_PRSurgeVec_M - map Surge Line Pressure Ratio vector (Vec = f(Alpha)) (sxr)"
+		    Value		    "MWS.HPC.PRSM"
+		    Enabled		    "off"
+		  }
+		  Object {
+		    $ObjectID		    57
+		    Type		    "edit"
+		    Name		    "iDesign_M"
+		    Prompt		    "iDesign_M - Design fork (0 - Enable iDes, 1 - Use iDes Scalars, 2 - Use Specified Input Scalars)"
+		    Value		    "2"
+		    Enabled		    "off"
+		    Callback		    "MSK_SEC_Enables_Ides_TMATS('iDesign_M',[7 8 9 10],'G1')\nMSK_SEC_Enables_Ides_TMATS('iDesign_M',["
+		    "27 28 29 30],'G2')\nMSK_SEC_Enables_Ides_TMATS('iDesign_M',[31],'G3')\n"
+		  }
+		  Object {
+		    $ObjectID		    58
+		    Type		    "edit"
+		    Name		    "NcDes_M"
+		    Prompt		    "NcDes_M - map Design Corrected Shaft Speed [rpm]"
+		    Value		    "10000"
+		    Enabled		    "off"
+		  }
+		  Object {
+		    $ObjectID		    59
+		    Type		    "edit"
+		    Name		    "EffDes_M"
+		    Prompt		    "EffDes_M  - Design Efficiency [frac]"
+		    Value		    "0.95"
+		    Enabled		    "off"
+		  }
+		  Object {
+		    $ObjectID		    60
+		    Type		    "edit"
+		    Name		    "PRDes_M"
+		    Prompt		    "PRDes_M - Design Pressure Ratio [frac]"
+		    Value		    "20"
+		    Enabled		    "off"
+		  }
+		  Object {
+		    $ObjectID		    61
+		    Type		    "edit"
+		    Name		    "RlineDes_M"
+		    Prompt		    "RlineDes_M - map Design Rline"
+		    Value		    "2"
+		    Enabled		    "off"
+		  }
+		  Object {
+		    $ObjectID		    62
+		    Type		    "edit"
+		    Name		    "FVar_M"
+		    Prompt		    "FVar_M - File name for iDes Variables"
+		    Value		    "strcat('iDes_',stripchar_TMATS(gcb),'.bin')"
+		    Tunable		    "off"
+		    Enabled		    "off"
+		  }
+		  Object {
+		    $ObjectID		    63
+		    Type		    "edit"
+		    Name		    "BlkNm_M"
+		    Prompt		    "Block name as double for Simulink output"
+		    Value		    "double(gcb)"
+		    Tunable		    "off"
+		    Internal		    "on"
+		    Visible		    "off"
+		  }
+		  Object {
+		    $ObjectID		    64
+		    Type		    "checkbox"
+		    Name		    "HP_M"
+		    Prompt		    "HP_M - Enable Health Parameter input (3x1 vector)"
+		    Value		    "on"
+		  }
+		  PropName		  "Parameters"
+		}
+		Array {
+		  Type			  "Simulink.dialog.Container"
+		  Dimension		  2
+		  Object {
+		    $ObjectID		    65
+		    $ClassName		    "Simulink.dialog.Group"
+		    Prompt		    "%<MaskType>"
+		    Object {
+		    $PropName		    "DialogControls"
+		    $ObjectID		    66
+		    $ClassName		    "Simulink.dialog.Text"
+		    Prompt		    "%<MaskDescription>"
+		    Name		    "DescTextVar"
+		    }
+		    Name		    "DescGroupVar"
+		  }
+		  Object {
+		    $ObjectID		    67
+		    $ClassName		    "Simulink.dialog.TabContainer"
+		    Array {
+		    Type		    "Simulink.dialog.Tab"
+		    Dimension		    5
+		    Object {
+		    $ObjectID		    68
+		    Prompt		    "C-Map"
+		    Array {
+		    Type		    "Simulink.dialog.Control"
+		    Dimension		    11
+		    Object {
+		    $ObjectID		    69
+		    $ClassName		    "Simulink.dialog.parameter.Edit"
+		    Name		    "X_C_RlineVec_M"
+		    }
+		    Object {
+		    $ObjectID		    70
+		    $ClassName		    "Simulink.dialog.parameter.Edit"
+		    Name		    "Z_C_AlphaVec_M"
+		    }
+		    Object {
+		    $ObjectID		    71
+		    $ClassName		    "Simulink.dialog.parameter.Edit"
+		    Name		    "Y_C_Map_NcVec_M"
+		    }
+		    Object {
+		    $ObjectID		    72
+		    $ClassName		    "Simulink.dialog.parameter.Edit"
+		    Name		    "T_C_Map_WcArray_M"
+		    }
+		    Object {
+		    $ObjectID		    73
+		    $ClassName		    "Simulink.dialog.parameter.Edit"
+		    Name		    "T_C_Map_PRArray_M"
+		    }
+		    Object {
+		    $ObjectID		    74
+		    $ClassName		    "Simulink.dialog.parameter.Edit"
+		    Name		    "T_C_Map_EffArray_M"
+		    }
+		    Object {
+		    $ObjectID		    75
+		    $ClassName		    "Simulink.dialog.parameter.Edit"
+		    Name		    "s_C_Nc_M"
+		    }
+		    Object {
+		    $ObjectID		    76
+		    $ClassName		    "Simulink.dialog.parameter.Edit"
+		    Name		    "s_C_Wc_M"
+		    }
+		    Object {
+		    $ObjectID		    77
+		    $ClassName		    "Simulink.dialog.parameter.Edit"
+		    Name		    "s_C_PR_M"
+		    }
+		    Object {
+		    $ObjectID		    78
+		    $ClassName		    "Simulink.dialog.parameter.Edit"
+		    Name		    "s_C_Eff_M"
+		    }
+		    Object {
+		    $ObjectID		    79
+		    $ClassName		    "Simulink.dialog.Panel"
+		    Visible		    "off"
+		    Array {
+		    Type		    "Simulink.dialog.Control"
+		    Dimension		    3
+		    Object {
+		    $ObjectID		    80
+		    $ClassName		    "Simulink.dialog.Button"
+		    Prompt		    "Plot Map"
+		    Callback		    "MSK_PlotCMap_TMATS() \n"
+		    Name		    "Control2"
+		    }
+		    Object {
+		    $ObjectID		    81
+		    $ClassName		    "Simulink.dialog.parameter.CheckBox"
+		    Row			    "current"
+		    Name		    "SL_M"
+		    }
+		    Object {
+		    $ObjectID		    82
+		    $ClassName		    "Simulink.dialog.parameter.RadioButton"
+		    Row			    "current"
+		    Name		    "Scale_M"
+		    }
+		    PropName		    "DialogControls"
+		    }
+		    Name		    "Container7"
+		    }
+		    PropName		    "DialogControls"
+		    }
+		    Name		    "ParameterTabVar0"
+		    }
+		    Object {
+		    $ObjectID		    83
+		    Prompt		    "Bleeds"
+		    Array {
+		    Type		    "Simulink.dialog.parameter.Control"
+		    Dimension		    8
+		    Object {
+		    $ObjectID		    84
+		    $ClassName		    "Simulink.dialog.parameter.CheckBox"
+		    Name		    "CBLDEN_M"
+		    }
+		    Object {
+		    $ObjectID		    85
+		    $ClassName		    "Simulink.dialog.parameter.Edit"
+		    Name		    "C_CBD_M"
+		    }
+		    Object {
+		    $ObjectID		    86
+		    $ClassName		    "Simulink.dialog.parameter.Edit"
+		    Name		    "C_CBFht_M"
+		    }
+		    Object {
+		    $ObjectID		    87
+		    $ClassName		    "Simulink.dialog.parameter.Edit"
+		    Name		    "C_CBFPt_M"
+		    }
+		    Object {
+		    $ObjectID		    88
+		    $ClassName		    "Simulink.dialog.parameter.CheckBox"
+		    Name		    "FBLDEN_M"
+		    }
+		    Object {
+		    $ObjectID		    89
+		    $ClassName		    "Simulink.dialog.parameter.Edit"
+		    Name		    "C_FBD_M"
+		    }
+		    Object {
+		    $ObjectID		    90
+		    $ClassName		    "Simulink.dialog.parameter.Edit"
+		    Name		    "C_BFht_M"
+		    }
+		    Object {
+		    $ObjectID		    91
+		    $ClassName		    "Simulink.dialog.parameter.Edit"
+		    Name		    "C_BFPt_M"
+		    }
+		    PropName		    "DialogControls"
+		    }
+		    Name		    "ParameterTabVar01"
+		    }
+		    Object {
+		    $ObjectID		    92
+		    Prompt		    "Surge Margin"
+		    Array {
+		    Type		    "Simulink.dialog.parameter.Control"
+		    Dimension		    5
+		    Object {
+		    $ObjectID		    93
+		    $ClassName		    "Simulink.dialog.parameter.CheckBox"
+		    Name		    "DefSMEn_M"
+		    }
+		    Object {
+		    $ObjectID		    94
+		    $ClassName		    "Simulink.dialog.parameter.CheckBox"
+		    Name		    "SMNEn_M"
+		    }
+		    Object {
+		    $ObjectID		    95
+		    $ClassName		    "Simulink.dialog.parameter.Edit"
+		    Name		    "SRline_M"
+		    }
+		    Object {
+		    $ObjectID		    96
+		    $ClassName		    "Simulink.dialog.parameter.Edit"
+		    Name		    "X_C_Map_WcSurgeVec_M"
+		    }
+		    Object {
+		    $ObjectID		    97
+		    $ClassName		    "Simulink.dialog.parameter.Edit"
+		    Name		    "T_C_Map_PRSurgeVec_M"
+		    }
+		    PropName		    "DialogControls"
+		    }
+		    Name		    "ParameterTabVar012"
+		    }
+		    Object {
+		    $ObjectID		    98
+		    Prompt		    "iDesign"
+		    Array {
+		    Type		    "Simulink.dialog.parameter.Edit"
+		    Dimension		    7
+		    Object {
+		    $ObjectID		    99
+		    Name		    "iDesign_M"
+		    }
+		    Object {
+		    $ObjectID		    100
+		    Name		    "NcDes_M"
+		    }
+		    Object {
+		    $ObjectID		    101
+		    Name		    "EffDes_M"
+		    }
+		    Object {
+		    $ObjectID		    102
+		    Name		    "PRDes_M"
+		    }
+		    Object {
+		    $ObjectID		    103
+		    Name		    "RlineDes_M"
+		    }
+		    Object {
+		    $ObjectID		    104
+		    Name		    "FVar_M"
+		    }
+		    Object {
+		    $ObjectID		    105
+		    Name		    "BlkNm_M"
+		    }
+		    PropName		    "DialogControls"
+		    }
+		    Name		    "ParameterTabVar0123"
+		    }
+		    Object {
+		    $ObjectID		    106
+		    Prompt		    "Health Parameters"
+		    Object {
+		    $PropName		    "DialogControls"
+		    $ObjectID		    107
+		    $ClassName		    "Simulink.dialog.parameter.CheckBox"
+		    Name		    "HP_M"
+		    }
+		    Name		    "Container9"
+		    }
+		    PropName		    "DialogControls"
+		    }
+		    Name		    "ParameterTabContainerVar"
+		  }
+		  PropName		  "DialogControls"
+		}
+	      }
+	      System {
+		Name			"CompressorVG"
+		Location		[1529, -7, 3079, 831]
+		Open			off
+		ModelBrowserVisibility	off
+		ModelBrowserWidth	200
+		ScreenColor		"white"
+		PaperOrientation	"landscape"
+		PaperPositionMode	"auto"
+		PaperType		"usletter"
+		PaperUnits		"inches"
+		TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
+		TiledPageScale		1
+		ShowPageBoundaries	off
+		ZoomFactor		"80"
+		SIDHighWatermark	"735"
+		SIDPrevWatermark	"735"
+		Block {
+		  BlockType		  Inport
+		  Name			  "GasPthCharIn"
+		  SID			  "1293:24"
+		  Position		  [115, 758, 145, 772]
+		  ZOrder		  4
+		  ForegroundColor	  "blue"
+		  IconDisplay		  "Port number"
+		  Port {
+		    PortNumber		    1
+		    Name		    "Compressor Combusted Fuel to Air Ratio"
+		    RTWStorageClass	    "Auto"
+		    DataLoggingNameMode	    "SignalName"
+		  }
+		}
+		Block {
+		  BlockType		  Inport
+		  Name			  "Rline"
+		  SID			  "1293:28"
+		  Position		  [115, 918, 145, 932]
+		  ZOrder		  10
+		  ForegroundColor	  "darkGreen"
+		  Port			  "2"
+		  IconDisplay		  "Port number"
+		  Port {
+		    PortNumber		    1
+		    Name		    "Compressor map R-line (Rline)"
+		    RTWStorageClass	    "Auto"
+		    DataLoggingNameMode	    "SignalName"
+		  }
+		}
+		Block {
+		  BlockType		  Inport
+		  Name			  "Alpha"
+		  SID			  "1293:528"
+		  Position		  [115, 958, 145, 972]
+		  ZOrder		  80
+		  Port			  "3"
+		  IconDisplay		  "Port number"
+		  Port {
+		    PortNumber		    1
+		    Name		    "Alpha"
+		    RTWStorageClass	    "Auto"
+		    DataLoggingNameMode	    "SignalName"
+		  }
+		}
+		Block {
+		  BlockType		  Inport
+		  Name			  "HP_Mods"
+		  SID			  "1293:735"
+		  Position		  [20, 1050, 95, 1070]
+		  ZOrder		  118
+		  Port			  "4"
+		  IconDisplay		  "Port number"
+		}
+		Block {
+		  BlockType		  Inport
+		  Name			  "Nmech"
+		  SID			  "1293:27"
+		  Position		  [115, 878, 145, 892]
+		  ZOrder		  20
+		  ForegroundColor	  "red"
+		  Port			  "5"
+		  IconDisplay		  "Port number"
+		  Port {
+		    PortNumber		    1
+		    Name		    "Compressor Mechanical Shaft Speed; Nmech[rpm]"
+		    RTWStorageClass	    "Auto"
+		    DataLoggingNameMode	    "SignalName"
+		  }
+		}
+		Block {
+		  BlockType		  Constant
+		  Name			  "Block Name from Mask"
+		  SID			  "1293:517"
+		  Position		  [915, 877, 1010, 893]
+		  ZOrder		  54
+		  Value			  "BlkNm_M"
+		  Port {
+		    PortNumber		    1
+		    Name		    "BlkNm"
+		    RTWStorageClass	    "Auto"
+		    DataLoggingNameMode	    "SignalName"
+		  }
+		}
+		Block {
+		  BlockType		  BusCreator
+		  Name			  "Bus Creator"
+		  SID			  "1293:29"
+		  Ports			  [12, 1]
+		  Position		  [610, 675, 615, 1135]
+		  ZOrder		  12
+		  ShowName		  off
+		  Inputs		  "12"
+		  DisplayOption		  "bar"
+		}
+		Block {
+		  BlockType		  BusCreator
+		  Name			  "Bus Creator1"
+		  SID			  "1293:470"
+		  Ports			  [25, 1]
+		  Position		  [1140, 238, 1145, 992]
+		  ZOrder		  43
+		  ShowName		  off
+		  Inputs		  "25"
+		  DisplayOption		  "bar"
+		}
+		Block {
+		  BlockType		  BusCreator
+		  Name			  "Bus Creator2"
+		  SID			  "1293:316"
+		  Ports			  [5, 1]
+		  Position		  [1065, 29, 1070, 181]
+		  ZOrder		  23
+		  ShowName		  off
+		  Inputs		  "5"
+		  DisplayOption		  "bar"
+		}
+		Block {
+		  BlockType		  S-Function
+		  Name			  "Compressor"
+		  SID			  "1293:31"
+		  Ports			  [3, 3]
+		  Position		  [650, 777, 770, 1553]
+		  ZOrder		  1
+		  FunctionName		  "Compressor_TMATS"
+		  Parameters		  "Y_C_Map_NcVec_M, X_C_RlineVec_M, Z_C_AlphaVec_M, T_C_Map_WcArray_M, T_C_Map_PRArray_M, T_C_Map_EffA"
+		  "rray_M, C_CBFht_M, C_CBFPt_M,  C_BFht_M, C_BFPt_M, X_C_Map_WcSurgeVec_M, T_C_Map_PRSurgeVec_M, iDesign_M, SMNEn_M,"
+		  " NcDes_M, EffDes_M, PRDes_M, RlineDes_M, CBLDEN_M, FBLDEN_M, gcs, length(C_CBD_M), length(C_FBD_M), size(T_C_Map_W"
+		  "cArray_M,2), size(T_C_Map_PRArray_M,2), size(T_C_Map_EffArray_M,2), size(T_C_Map_WcArray_M,1), size(T_C_Map_PRArra"
+		  "y_M,1), size(T_C_Map_EffArray_M,1), size(T_C_Map_WcArray_M,3), size(T_C_Map_PRArray_M,3), size(T_C_Map_EffArray_M,"
+		  "3)"
+		  SFunctionModules	  "'h2tc_TMATS pt2sc_TMATS sp2tc_TMATS t2hc_TMATS interp1Ac_TMATS interp2Ac_TMATS interp3Ac_TMATS"
+		  " functions_TMATS'"
+		  Port {
+		    PortNumber		    2
+		    Name		    "CustomerBleedCharacteristics"
+		    RTWStorageClass	    "Auto"
+		    DataLoggingNameMode	    "SignalName"
+		  }
+		  Port {
+		    PortNumber		    3
+		    Name		    "FractionalBleedFlowCharacteristics"
+		    RTWStorageClass	    "Auto"
+		    DataLoggingNameMode	    "SignalName"
+		  }
+		}
+		Block {
+		  BlockType		  Constant
+		  Name			  "Constant"
+		  SID			  "1293:523"
+		  Position		  [330, 995, 405, 1015]
+		  ZOrder		  75
+		  ShowName		  off
+		  Value			  "s_C_Nc_M"
+		  Port {
+		    PortNumber		    1
+		    Name		    "s_C_Nc"
+		    RTWStorageClass	    "Auto"
+		    DataLoggingNameMode	    "SignalName"
+		  }
+		}
+		Block {
+		  BlockType		  Constant
+		  Name			  "Constant1"
+		  SID			  "1293:570"
+		  Position		  [135, 1125, 210, 1145]
+		  ZOrder		  99
+		  ShowName		  off
+		  Value			  "s_C_Eff_M"
+		}
+		Block {
+		  BlockType		  Constant
+		  Name			  "Constant2"
+		  SID			  "1293:525"
+		  Position		  [205, 1075, 280, 1095]
+		  ZOrder		  77
+		  ShowName		  off
+		  Value			  "s_C_Wc_M"
+		}
+		Block {
+		  BlockType		  Constant
+		  Name			  "Constant4"
+		  SID			  "1293:569"
+		  Position		  [175, 1100, 250, 1120]
+		  ZOrder		  98
+		  ShowName		  off
+		  Value			  " s_C_PR_M"
+		}
+		Block {
+		  BlockType		  Constant
+		  Name			  "Customer or flow based Bleed Demand Vector"
+		  SID			  "1293:441"
+		  Position		  [400, 1150, 580, 1180]
+		  ZOrder		  39
+		  Value			  "C_CBD_M"
+		}
+		Block {
+		  BlockType		  Demux
+		  Name			  "Demux"
+		  SID			  "1293:30"
+		  Ports			  [1, 27]
+		  Position		  [845, 18, 850, 852]
+		  ZOrder		  14
+		  ShowName		  off
+		  Outputs		  "27"
+		  DisplayOption		  "bar"
+		  Port {
+		    PortNumber		    1
+		    Name		    "W"
+		    RTWStorageClass	    "Auto"
+		    DataLoggingNameMode	    "SignalName"
+		  }
+		  Port {
+		    PortNumber		    2
+		    Name		    "ht"
+		    RTWStorageClass	    "Auto"
+		    DataLoggingNameMode	    "SignalName"
+		  }
+		  Port {
+		    PortNumber		    3
+		    Name		    "Tt"
+		    RTWStorageClass	    "Auto"
+		    DataLoggingNameMode	    "SignalName"
+		  }
+		  Port {
+		    PortNumber		    4
+		    Name		    "Pt"
+		    RTWStorageClass	    "Auto"
+		    DataLoggingNameMode	    "SignalName"
+		  }
+		  Port {
+		    PortNumber		    5
+		    Name		    "FAR"
+		    RTWStorageClass	    "Auto"
+		    DataLoggingNameMode	    "SignalName"
+		  }
+		  Port {
+		    PortNumber		    6
+		    Name		    "Trq"
+		    RTWStorageClass	    "Auto"
+		    DataLoggingNameMode	    "SignalName"
+		  }
+		  Port {
+		    PortNumber		    7
+		    Name		    "NErr"
+		    RTWStorageClass	    "Auto"
+		    DataLoggingNameMode	    "SignalName"
+		  }
+		  Port {
+		    PortNumber		    8
+		    Name		    "SMavail"
+		    RTWStorageClass	    "Auto"
+		    DataLoggingNameMode	    "SignalName"
+		  }
+		  Port {
+		    PortNumber		    9
+		    Name		    "s_C_Nc"
+		    RTWStorageClass	    "Auto"
+		    DataLoggingNameMode	    "SignalName"
+		  }
+		  Port {
+		    PortNumber		    10
+		    Name		    "s_C_Wc"
+		    RTWStorageClass	    "Auto"
+		    DataLoggingNameMode	    "SignalName"
+		  }
+		  Port {
+		    PortNumber		    11
+		    Name		    "s_C_PR"
+		    RTWStorageClass	    "Auto"
+		    DataLoggingNameMode	    "SignalName"
+		  }
+		  Port {
+		    PortNumber		    12
+		    Name		    "s_C_Eff"
+		    RTWStorageClass	    "Auto"
+		    DataLoggingNameMode	    "SignalName"
+		  }
+		  Port {
+		    PortNumber		    13
+		    Name		    "Wcin"
+		    RTWStorageClass	    "Auto"
+		    DataLoggingNameMode	    "SignalName"
+		  }
+		  Port {
+		    PortNumber		    14
+		    Name		    "Nc"
+		    RTWStorageClass	    "Auto"
+		    DataLoggingNameMode	    "SignalName"
+		  }
+		  Port {
+		    PortNumber		    15
+		    Name		    "PR"
+		    RTWStorageClass	    "Auto"
+		    DataLoggingNameMode	    "SignalName"
+		  }
+		  Port {
+		    PortNumber		    16
+		    Name		    "NcMap"
+		    RTWStorageClass	    "Auto"
+		    DataLoggingNameMode	    "SignalName"
+		  }
+		  Port {
+		    PortNumber		    17
+		    Name		    "WcMap"
+		    RTWStorageClass	    "Auto"
+		    DataLoggingNameMode	    "SignalName"
+		  }
+		  Port {
+		    PortNumber		    18
+		    Name		    "PRMap"
+		    RTWStorageClass	    "Auto"
+		    DataLoggingNameMode	    "SignalName"
+		  }
+		  Port {
+		    PortNumber		    19
+		    Name		    "EffMap"
+		    RTWStorageClass	    "Auto"
+		    DataLoggingNameMode	    "SignalName"
+		  }
+		  Port {
+		    PortNumber		    20
+		    Name		    "SurgePR"
+		    RTWStorageClass	    "Auto"
+		    DataLoggingNameMode	    "SignalName"
+		  }
+		  Port {
+		    PortNumber		    21
+		    Name		    "Wbleeds"
+		    RTWStorageClass	    "Auto"
+		    DataLoggingNameMode	    "SignalName"
+		  }
+		  Port {
+		    PortNumber		    22
+		    Name		    "Pwrb4bleed"
+		    RTWStorageClass	    "Auto"
+		    DataLoggingNameMode	    "SignalName"
+		  }
+		  Port {
+		    PortNumber		    23
+		    Name		    "PwrBld"
+		    RTWStorageClass	    "Auto"
+		    DataLoggingNameMode	    "SignalName"
+		  }
+		  Port {
+		    PortNumber		    24
+		    Name		    "Pwrout"
+		    RTWStorageClass	    "Auto"
+		    DataLoggingNameMode	    "SignalName"
+		  }
+		  Port {
+		    PortNumber		    25
+		    Name		    "SMMap"
+		    RTWStorageClass	    "Auto"
+		    DataLoggingNameMode	    "SignalName"
+		  }
+		  Port {
+		    PortNumber		    26
+		    Name		    "SPRMap"
+		    RTWStorageClass	    "Auto"
+		    DataLoggingNameMode	    "SignalName"
+		  }
+		  Port {
+		    PortNumber		    27
+		    Name		    "Test"
+		    RTWStorageClass	    "Auto"
+		    DataLoggingNameMode	    "SignalName"
+		  }
+		}
+		Block {
+		  BlockType		  Demux
+		  Name			  "Demux1"
+		  SID			  "1293:317"
+		  Ports			  [1, 5]
+		  Position		  [355, 663, 360, 867]
+		  ZOrder		  24
+		  ShowName		  off
+		  Outputs		  "5"
+		  DisplayOption		  "bar"
+		  Port {
+		    PortNumber		    1
+		    Name		    "Compressor Theoretical Gas Flow In; WIn[pps]"
+		    RTWStorageClass	    "Auto"
+		    DataLoggingNameMode	    "SignalName"
+		  }
+		  Port {
+		    PortNumber		    2
+		    Name		    "Compressor enthalpy; ht[BTU/lbm]"
+		    RTWStorageClass	    "Auto"
+		    DataLoggingNameMode	    "SignalName"
+		  }
+		  Port {
+		    PortNumber		    3
+		    Name		    "Compressor Total Temperature; TtIn[degR]"
+		    RTWStorageClass	    "Auto"
+		    DataLoggingNameMode	    "SignalName"
+		  }
+		  Port {
+		    PortNumber		    4
+		    Name		    "Compressor Total Pressure; PtIn[psia]"
+		    RTWStorageClass	    "Auto"
+		    DataLoggingNameMode	    "SignalName"
+		  }
+		  Port {
+		    PortNumber		    5
+		    Name		    "Compressor Combusted Fuel to Air Ratio; FARcIn[frac]"
+		    RTWStorageClass	    "Auto"
+		    DataLoggingNameMode	    "SignalName"
+		  }
+		}
+		Block {
+		  BlockType		  Demux
+		  Name			  "Demux2"
+		  SID			  "1293:578"
+		  Ports			  [1, 3]
+		  Position		  [1035, 896, 1040, 994]
+		  ZOrder		  115
+		  ShowName		  off
+		  Outputs		  "3"
+		  DisplayOption		  "bar"
+		  Port {
+		    PortNumber		    1
+		    Name		    "WHPMod"
+		    RTWStorageClass	    "Auto"
+		    DataLoggingNameMode	    "SignalName"
+		  }
+		  Port {
+		    PortNumber		    2
+		    Name		    "PRHPMod"
+		    RTWStorageClass	    "Auto"
+		    DataLoggingNameMode	    "SignalName"
+		  }
+		  Port {
+		    PortNumber		    3
+		    Name		    "EffHPMod"
+		    RTWStorageClass	    "Auto"
+		    DataLoggingNameMode	    "SignalName"
+		  }
+		}
+		Block {
+		  BlockType		  Constant
+		  Name			  "Fractional Bleed Demand Vector"
+		  SID			  "1293:442"
+		  Position		  [400, 1412, 595, 1438]
+		  ZOrder		  40
+		  Value			  "C_FBD_M"
+		}
+		Block {
+		  BlockType		  Goto
+		  Name			  "Goto"
+		  SID			  "1293:518"
+		  Position		  [505, 895, 565, 905]
+		  ZOrder		  55
+		  ShowName		  off
+		  GotoTag		  "Nmech"
+		}
+		Block {
+		  BlockType		  From
+		  Name			  "Goto1"
+		  SID			  "1293:520"
+		  Position		  [950, 850, 1010, 860]
+		  ZOrder		  57
+		  ShowName		  off
+		  GotoTag		  "Nmech"
+		  Port {
+		    PortNumber		    1
+		    Name		    "Nmech"
+		    PropagatedSignals	    "Compressor Mechanical Shaft Speed; Nmech[rpm]"
+		    RTWStorageClass	    "Auto"
+		    DataLoggingNameMode	    "SignalName"
+		  }
+		}
+		Block {
+		  BlockType		  Goto
+		  Name			  "Goto2"
+		  SID			  "1293:529"
+		  Position		  [520, 470, 580, 480]
+		  ZOrder		  84
+		  ShowName		  off
+		  GotoTag		  "OnDesign"
+		}
+		Block {
+		  BlockType		  From
+		  Name			  "Goto3"
+		  SID			  "1293:568"
+		  Position		  [1205, 965, 1265, 975]
+		  ZOrder		  97
+		  ShowName		  off
+		  GotoTag		  "OnDesign"
+		}
+		Block {
+		  BlockType		  From
+		  Name			  "Goto4"
+		  SID			  "1293:572"
+		  Position		  [195, 1030, 255, 1040]
+		  ZOrder		  101
+		  ShowName		  off
+		  GotoTag		  "OnDesign"
+		}
+		Block {
+		  BlockType		  Goto
+		  Name			  "Goto5"
+		  SID			  "1293:574"
+		  Position		  [135, 1075, 195, 1085]
+		  ZOrder		  111
+		  ShowName		  off
+		  GotoTag		  "HPMods"
+		}
+		Block {
+		  BlockType		  From
+		  Name			  "Goto7"
+		  SID			  "1293:577"
+		  Position		  [915, 940, 975, 950]
+		  ZOrder		  114
+		  ShowName		  off
+		  GotoTag		  "HPMods"
+		}
+		Block {
+		  BlockType		  RelationalOperator
+		  Name			  "Relational Operator1"
+		  SID			  "1293:530"
+		  Ports			  [2, 1]
+		  Position		  [455, 457, 485, 488]
+		  ZOrder		  82
+		  ShowName		  off
+		  Operator		  "=="
+		  InputSameDT		  off
+		  OutDataTypeStr	  "boolean"
+		}
+		Block {
+		  BlockType		  Constant
+		  Name			  "ScalarOutputEnable2"
+		  SID			  "1293:531"
+		  Position		  [345, 465, 405, 495]
+		  ZOrder		  81
+		  Value			  "iDesign_M"
+		}
+		Block {
+		  BlockType		  Constant
+		  Name			  "ScalarOutputEnable3"
+		  SID			  "1293:532"
+		  Position		  [415, 455, 435, 475]
+		  ZOrder		  83
+		  ShowName		  off
+		  Value			  "0"
+		}
+		Block {
+		  BlockType		  SubSystem
+		  Name			  "Scalar_To_Workspace"
+		  SID			  "1293:504"
+		  Ports			  [4, 0, 1]
+		  Position		  [1275, 999, 1360, 1041]
+		  ZOrder		  53
+		  RequestExecContextInheritance	off
+		  System {
+		    Name		    "Scalar_To_Workspace"
+		    Location		    [-1541, 58, -712, 728]
+		    Open		    off
+		    ModelBrowserVisibility  off
+		    ModelBrowserWidth	    200
+		    ScreenColor		    "white"
+		    PaperOrientation	    "landscape"
+		    PaperPositionMode	    "auto"
+		    PaperType		    "usletter"
+		    PaperUnits		    "inches"
+		    TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
+		    TiledPageScale	    1
+		    ShowPageBoundaries	    off
+		    ZoomFactor		    "125"
+		    Block {
+		    BlockType		    Inport
+		    Name		    "C_Nc"
+		    SID			    "1293:505"
+		    Position		    [90, 103, 120, 117]
+		    ZOrder		    53
+		    IconDisplay		    "Port number"
+		    }
+		    Block {
+		    BlockType		    Inport
+		    Name		    "C_Wc"
+		    SID			    "1293:508"
+		    Position		    [90, 163, 120, 177]
+		    ZOrder		    55
+		    Port		    "2"
+		    IconDisplay		    "Port number"
+		    }
+		    Block {
+		    BlockType		    Inport
+		    Name		    "C_PR"
+		    SID			    "1293:509"
+		    Position		    [90, 223, 120, 237]
+		    ZOrder		    56
+		    Port		    "3"
+		    IconDisplay		    "Port number"
+		    }
+		    Block {
+		    BlockType		    Inport
+		    Name		    "C_Eff"
+		    SID			    "1293:510"
+		    Position		    [90, 283, 120, 297]
+		    ZOrder		    57
+		    Port		    "4"
+		    IconDisplay		    "Port number"
+		    }
+		    Block {
+		    BlockType		    EnablePort
+		    Name		    "Enable"
+		    SID			    "1293:511"
+		    Ports		    []
+		    Position		    [119, 45, 139, 65]
+		    ZOrder		    58
+		    }
+		    Block {
+		    BlockType		    Reference
+		    Name		    "DataOutput"
+		    SID			    "1293:512"
+		    Ports		    [1]
+		    Position		    [255, 183, 290, 217]
+		    ZOrder		    371
+		    LibraryVersion	    "1.377"
+		    SourceBlock		    "Lib_Solve_DataOut_TMATS/DataOutput"
+		    SourceType		    "T-MATS: Data Output Library Block"
+		    ContentPreviewEnabled   off
+		    FVar_M		    "double(FVar_M)"
+		    }
+		    Block {
+		    BlockType		    Mux
+		    Name		    "Mux"
+		    SID			    "1293:516"
+		    Ports		    [4, 1]
+		    Position		    [210, 78, 215, 322]
+		    ZOrder		    375
+		    ShowName		    off
+		    DisplayOption	    "bar"
+		    }
+		    Line {
+		    ZOrder		    1
+		    SrcBlock		    "Mux"
+		    SrcPort		    1
+		    DstBlock		    "DataOutput"
+		    DstPort		    1
+		    }
+		    Line {
+		    ZOrder		    2
+		    SrcBlock		    "C_Eff"
+		    SrcPort		    1
+		    DstBlock		    "Mux"
+		    DstPort		    4
+		    }
+		    Line {
+		    ZOrder		    3
+		    SrcBlock		    "C_PR"
+		    SrcPort		    1
+		    DstBlock		    "Mux"
+		    DstPort		    3
+		    }
+		    Line {
+		    ZOrder		    4
+		    SrcBlock		    "C_Wc"
+		    SrcPort		    1
+		    DstBlock		    "Mux"
+		    DstPort		    2
+		    }
+		    Line {
+		    ZOrder		    5
+		    SrcBlock		    "C_Nc"
+		    SrcPort		    1
+		    DstBlock		    "Mux"
+		    DstPort		    1
+		    }
+		  }
+		}
+		Block {
+		  BlockType		  SubSystem
+		  Name			  "scalarMod"
+		  SID			  "1293:533"
+		  Ports			  [5, 3]
+		  Position		  [295, 1026, 385, 1144]
+		  ZOrder		  95
+		  RequestExecContextInheritance	off
+		  Port {
+		    PortNumber		    1
+		    Name		    "s_C_Wc"
+		    RTWStorageClass	    "Auto"
+		    DataLoggingNameMode	    "SignalName"
+		  }
+		  Port {
+		    PortNumber		    2
+		    Name		    "s_C_PR"
+		    RTWStorageClass	    "Auto"
+		    DataLoggingNameMode	    "SignalName"
+		  }
+		  Port {
+		    PortNumber		    3
+		    Name		    "s_C_Eff"
+		    RTWStorageClass	    "Auto"
+		    DataLoggingNameMode	    "SignalName"
+		  }
+		  System {
+		    Name		    "scalarMod"
+		    Location		    [536, 258, 1465, 977]
+		    Open		    off
+		    ModelBrowserVisibility  off
+		    ModelBrowserWidth	    200
+		    ScreenColor		    "white"
+		    PaperOrientation	    "landscape"
+		    PaperPositionMode	    "auto"
+		    PaperType		    "usletter"
+		    PaperUnits		    "inches"
+		    TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
+		    TiledPageScale	    1
+		    ShowPageBoundaries	    off
+		    ZoomFactor		    "116"
+		    Block {
+		    BlockType		    Inport
+		    Name		    "OnDesign"
+		    SID			    "1293:534"
+		    Position		    [95, 453, 125, 467]
+		    ZOrder		    103
+		    IconDisplay		    "Port number"
+		    }
+		    Block {
+		    BlockType		    Inport
+		    Name		    "HPMods"
+		    SID			    "1293:535"
+		    Position		    [95, 553, 125, 567]
+		    ZOrder		    95
+		    Port		    "2"
+		    IconDisplay		    "Port number"
+		    }
+		    Block {
+		    BlockType		    Inport
+		    Name		    "s_Wc"
+		    SID			    "1293:536"
+		    Position		    [40, 113, 70, 127]
+		    ZOrder		    94
+		    Port		    "3"
+		    IconDisplay		    "Port number"
+		    }
+		    Block {
+		    BlockType		    Inport
+		    Name		    "s_PR"
+		    SID			    "1293:537"
+		    Position		    [40, 248, 70, 262]
+		    ZOrder		    131
+		    Port		    "4"
+		    IconDisplay		    "Port number"
+		    }
+		    Block {
+		    BlockType		    Inport
+		    Name		    "s_Eff"
+		    SID			    "1293:538"
+		    Position		    [40, 383, 70, 397]
+		    ZOrder		    138
+		    Port		    "5"
+		    IconDisplay		    "Port number"
+		    }
+		    Block {
+		    BlockType		    Constant
+		    Name		    "Constant"
+		    SID			    "1293:539"
+		    Position		    [150, 17, 175, 33]
+		    ZOrder		    111
+		    ShowName		    off
+		    }
+		    Block {
+		    BlockType		    Constant
+		    Name		    "Constant1"
+		    SID			    "1293:540"
+		    Position		    [150, 152, 175, 168]
+		    ZOrder		    134
+		    ShowName		    off
+		    }
+		    Block {
+		    BlockType		    Constant
+		    Name		    "Constant2"
+		    SID			    "1293:541"
+		    Position		    [150, 287, 175, 303]
+		    ZOrder		    141
+		    ShowName		    off
+		    }
+		    Block {
+		    BlockType		    DataTypeConversion
+		    Name		    "Data Type Conversion"
+		    SID			    "1293:542"
+		    Position		    [195, 443, 270, 477]
+		    ZOrder		    104
+		    ShowName		    off
+		    RndMeth		    "Floor"
+		    SaturateOnIntegerOverflow off
+		    }
+		    Block {
+		    BlockType		    Demux
+		    Name		    "Demux"
+		    SID			    "1293:543"
+		    Ports		    [1, 3]
+		    Position		    [155, 513, 160, 607]
+		    ZOrder		    144
+		    ShowName		    off
+		    Outputs		    "3"
+		    DisplayOption	    "bar"
+		    }
+		    Block {
+		    BlockType		    Goto
+		    Name		    "Goto"
+		    SID			    "1293:544"
+		    Position		    [295, 452, 360, 468]
+		    ZOrder		    105
+		    ShowName		    off
+		    GotoTag		    "OffDesign"
+		    }
+		    Block {
+		    BlockType		    From
+		    Name		    "Goto1"
+		    SID			    "1293:545"
+		    Position		    [20, 57, 85, 73]
+		    ZOrder		    129
+		    ShowName		    off
+		    GotoTag		    "OffDesign"
+		    }
+		    Block {
+		    BlockType		    From
+		    Name		    "Goto2"
+		    SID			    "1293:546"
+		    Position		    [20, 192, 85, 208]
+		    ZOrder		    136
+		    ShowName		    off
+		    GotoTag		    "OffDesign"
+		    }
+		    Block {
+		    BlockType		    From
+		    Name		    "Goto3"
+		    SID			    "1293:547"
+		    Position		    [20, 327, 85, 343]
+		    ZOrder		    143
+		    ShowName		    off
+		    GotoTag		    "OffDesign"
+		    }
+		    Block {
+		    BlockType		    Goto
+		    Name		    "Goto4"
+		    SID			    "1293:548"
+		    Position		    [200, 522, 265, 538]
+		    ZOrder		    145
+		    ShowName		    off
+		    GotoTag		    "WcMod"
+		    }
+		    Block {
+		    BlockType		    Goto
+		    Name		    "Goto5"
+		    SID			    "1293:549"
+		    Position		    [200, 552, 265, 568]
+		    ZOrder		    146
+		    ShowName		    off
+		    GotoTag		    "PRMod"
+		    }
+		    Block {
+		    BlockType		    Goto
+		    Name		    "Goto6"
+		    SID			    "1293:550"
+		    Position		    [200, 582, 265, 598]
+		    ZOrder		    147
+		    ShowName		    off
+		    GotoTag		    "EffMod"
+		    }
+		    Block {
+		    BlockType		    From
+		    Name		    "Goto7"
+		    SID			    "1293:551"
+		    Position		    [20, 37, 85, 53]
+		    ZOrder		    149
+		    ShowName		    off
+		    GotoTag		    "WcMod"
+		    }
+		    Block {
+		    BlockType		    From
+		    Name		    "Goto8"
+		    SID			    "1293:552"
+		    Position		    [20, 172, 85, 188]
+		    ZOrder		    151
+		    ShowName		    off
+		    GotoTag		    "PRMod"
+		    }
+		    Block {
+		    BlockType		    From
+		    Name		    "Goto9"
+		    SID			    "1293:553"
+		    Position		    [20, 307, 85, 323]
+		    ZOrder		    153
+		    ShowName		    off
+		    GotoTag		    "EffMod"
+		    }
+		    Block {
+		    BlockType		    Logic
+		    Name		    "Logical\nOperator"
+		    SID			    "1293:554"
+		    Ports		    [1, 1]
+		    Position		    [145, 444, 175, 476]
+		    ZOrder		    106
+		    ShowName		    off
+		    Operator		    "NOT"
+		    AllPortsSameDT	    off
+		    OutDataTypeStr	    "boolean"
+		    }
+		    Block {
+		    BlockType		    Product
+		    Name		    "Product"
+		    SID			    "1293:555"
+		    Ports		    [2, 1]
+		    Position		    [230, 74, 260, 136]
+		    ZOrder		    91
+		    ShowName		    off
+		    InputSameDT		    off
+		    OutDataTypeStr	    "Inherit: Inherit via internal rule"
+		    RndMeth		    "Floor"
+		    SaturateOnIntegerOverflow off
+		    Port {
+		    PortNumber		    1
+		    Name		    "s_C_Wc"
+		    RTWStorageClass	    "Auto"
+		    DataLoggingNameMode	    "SignalName"
+		    }
+		    }
+		    Block {
+		    BlockType		    Product
+		    Name		    "Product1"
+		    SID			    "1293:556"
+		    Ports		    [2, 1]
+		    Position		    [230, 209, 260, 271]
+		    ZOrder		    130
+		    ShowName		    off
+		    InputSameDT		    off
+		    OutDataTypeStr	    "Inherit: Inherit via internal rule"
+		    RndMeth		    "Floor"
+		    SaturateOnIntegerOverflow off
+		    Port {
+		    PortNumber		    1
+		    Name		    "s_C_PR"
+		    RTWStorageClass	    "Auto"
+		    DataLoggingNameMode	    "SignalName"
+		    }
+		    }
+		    Block {
+		    BlockType		    Product
+		    Name		    "Product2"
+		    SID			    "1293:557"
+		    Ports		    [2, 1]
+		    Position		    [110, 169, 140, 211]
+		    ZOrder		    135
+		    ShowName		    off
+		    InputSameDT		    off
+		    OutDataTypeStr	    "Inherit: Inherit via internal rule"
+		    RndMeth		    "Floor"
+		    SaturateOnIntegerOverflow off
+		    }
+		    Block {
+		    BlockType		    Product
+		    Name		    "Product3"
+		    SID			    "1293:558"
+		    Ports		    [2, 1]
+		    Position		    [110, 34, 140, 76]
+		    ZOrder		    127
+		    ShowName		    off
+		    InputSameDT		    off
+		    OutDataTypeStr	    "Inherit: Inherit via internal rule"
+		    RndMeth		    "Floor"
+		    SaturateOnIntegerOverflow off
+		    }
+		    Block {
+		    BlockType		    Product
+		    Name		    "Product4"
+		    SID			    "1293:559"
+		    Ports		    [2, 1]
+		    Position		    [230, 344, 260, 406]
+		    ZOrder		    137
+		    ShowName		    off
+		    InputSameDT		    off
+		    OutDataTypeStr	    "Inherit: Inherit via internal rule"
+		    RndMeth		    "Floor"
+		    SaturateOnIntegerOverflow off
+		    Port {
+		    PortNumber		    1
+		    Name		    "s_C_Eff"
+		    RTWStorageClass	    "Auto"
+		    DataLoggingNameMode	    "SignalName"
+		    }
+		    }
+		    Block {
+		    BlockType		    Product
+		    Name		    "Product5"
+		    SID			    "1293:560"
+		    Ports		    [2, 1]
+		    Position		    [110, 304, 140, 346]
+		    ZOrder		    142
+		    ShowName		    off
+		    InputSameDT		    off
+		    OutDataTypeStr	    "Inherit: Inherit via internal rule"
+		    RndMeth		    "Floor"
+		    SaturateOnIntegerOverflow off
+		    }
+		    Block {
+		    BlockType		    Sum
+		    Name		    "Sum"
+		    SID			    "1293:561"
+		    Ports		    [2, 1]
+		    Position		    [180, 45, 200, 65]
+		    ZOrder		    110
+		    ShowName		    off
+		    IconShape		    "round"
+		    Inputs		    "++|"
+		    InputSameDT		    off
+		    OutDataTypeStr	    "Inherit: Inherit via internal rule"
+		    SaturateOnIntegerOverflow off
+		    }
+		    Block {
+		    BlockType		    Sum
+		    Name		    "Sum1"
+		    SID			    "1293:562"
+		    Ports		    [2, 1]
+		    Position		    [180, 180, 200, 200]
+		    ZOrder		    133
+		    ShowName		    off
+		    IconShape		    "round"
+		    Inputs		    "++|"
+		    InputSameDT		    off
+		    OutDataTypeStr	    "Inherit: Inherit via internal rule"
+		    SaturateOnIntegerOverflow off
+		    }
+		    Block {
+		    BlockType		    Sum
+		    Name		    "Sum2"
+		    SID			    "1293:563"
+		    Ports		    [2, 1]
+		    Position		    [180, 315, 200, 335]
+		    ZOrder		    140
+		    ShowName		    off
+		    IconShape		    "round"
+		    Inputs		    "++|"
+		    InputSameDT		    off
+		    OutDataTypeStr	    "Inherit: Inherit via internal rule"
+		    SaturateOnIntegerOverflow off
+		    }
+		    Block {
+		    BlockType		    Outport
+		    Name		    "C_Wc"
+		    SID			    "1293:564"
+		    Position		    [565, 98, 595, 112]
+		    ZOrder		    100
+		    IconDisplay		    "Port number"
+		    }
+		    Block {
+		    BlockType		    Outport
+		    Name		    "C_PR"
+		    SID			    "1293:565"
+		    Position		    [565, 233, 595, 247]
+		    ZOrder		    101
+		    Port		    "2"
+		    IconDisplay		    "Port number"
+		    }
+		    Block {
+		    BlockType		    Outport
+		    Name		    "C_Eff"
+		    SID			    "1293:566"
+		    Position		    [565, 368, 595, 382]
+		    ZOrder		    102
+		    Port		    "3"
+		    IconDisplay		    "Port number"
+		    }
+		    Line {
+		    Name		    "s_C_PR"
+		    ZOrder		    1
+		    Labels		    [1, 0]
+		    SrcBlock		    "Product1"
+		    SrcPort		    1
+		    DstBlock		    "C_PR"
+		    DstPort		    1
+		    }
+		    Line {
+		    Name		    "s_C_Eff"
+		    ZOrder		    2
+		    Labels		    [1, 0]
+		    SrcBlock		    "Product4"
+		    SrcPort		    1
+		    DstBlock		    "C_Eff"
+		    DstPort		    1
+		    }
+		    Line {
+		    Name		    "s_C_Wc"
+		    ZOrder		    3
+		    Labels		    [1, 0]
+		    SrcBlock		    "Product"
+		    SrcPort		    1
+		    DstBlock		    "C_Wc"
+		    DstPort		    1
+		    }
+		    Line {
+		    ZOrder		    4
+		    SrcBlock		    "s_Wc"
+		    SrcPort		    1
+		    DstBlock		    "Product"
+		    DstPort		    2
+		    }
+		    Line {
+		    ZOrder		    5
+		    SrcBlock		    "OnDesign"
+		    SrcPort		    1
+		    DstBlock		    "Logical\nOperator"
+		    DstPort		    1
+		    }
+		    Line {
+		    ZOrder		    6
+		    SrcBlock		    "Data Type Conversion"
+		    SrcPort		    1
+		    DstBlock		    "Goto"
+		    DstPort		    1
+		    }
+		    Line {
+		    ZOrder		    7
+		    SrcBlock		    "Logical\nOperator"
+		    SrcPort		    1
+		    DstBlock		    "Data Type Conversion"
+		    DstPort		    1
+		    }
+		    Line {
+		    ZOrder		    8
+		    SrcBlock		    "Sum"
+		    SrcPort		    1
+		    Points		    [8, 0; 0, 35]
+		    DstBlock		    "Product"
+		    DstPort		    1
+		    }
+		    Line {
+		    ZOrder		    9
+		    SrcBlock		    "Goto7"
+		    SrcPort		    1
+		    DstBlock		    "Product3"
+		    DstPort		    1
+		    }
+		    Line {
+		    ZOrder		    10
+		    SrcBlock		    "Constant"
+		    SrcPort		    1
+		    Points		    [10, 0]
+		    DstBlock		    "Sum"
+		    DstPort		    1
+		    }
+		    Line {
+		    ZOrder		    11
+		    SrcBlock		    "Product3"
+		    SrcPort		    1
+		    DstBlock		    "Sum"
+		    DstPort		    2
+		    }
+		    Line {
+		    ZOrder		    12
+		    SrcBlock		    "Goto1"
+		    SrcPort		    1
+		    DstBlock		    "Product3"
+		    DstPort		    2
+		    }
+		    Line {
+		    ZOrder		    13
+		    SrcBlock		    "s_PR"
+		    SrcPort		    1
+		    DstBlock		    "Product1"
+		    DstPort		    2
+		    }
+		    Line {
+		    ZOrder		    14
+		    SrcBlock		    "Sum1"
+		    SrcPort		    1
+		    Points		    [8, 0; 0, 35]
+		    DstBlock		    "Product1"
+		    DstPort		    1
+		    }
+		    Line {
+		    ZOrder		    15
+		    SrcBlock		    "Goto8"
+		    SrcPort		    1
+		    DstBlock		    "Product2"
+		    DstPort		    1
+		    }
+		    Line {
+		    ZOrder		    16
+		    SrcBlock		    "Constant1"
+		    SrcPort		    1
+		    Points		    [10, 0]
+		    DstBlock		    "Sum1"
+		    DstPort		    1
+		    }
+		    Line {
+		    ZOrder		    17
+		    SrcBlock		    "Product2"
+		    SrcPort		    1
+		    DstBlock		    "Sum1"
+		    DstPort		    2
+		    }
+		    Line {
+		    ZOrder		    18
+		    SrcBlock		    "Goto2"
+		    SrcPort		    1
+		    DstBlock		    "Product2"
+		    DstPort		    2
+		    }
+		    Line {
+		    ZOrder		    19
+		    SrcBlock		    "s_Eff"
+		    SrcPort		    1
+		    DstBlock		    "Product4"
+		    DstPort		    2
+		    }
+		    Line {
+		    ZOrder		    20
+		    SrcBlock		    "Sum2"
+		    SrcPort		    1
+		    Points		    [8, 0; 0, 35]
+		    DstBlock		    "Product4"
+		    DstPort		    1
+		    }
+		    Line {
+		    ZOrder		    21
+		    SrcBlock		    "Goto9"
+		    SrcPort		    1
+		    DstBlock		    "Product5"
+		    DstPort		    1
+		    }
+		    Line {
+		    ZOrder		    22
+		    SrcBlock		    "Constant2"
+		    SrcPort		    1
+		    Points		    [10, 0]
+		    DstBlock		    "Sum2"
+		    DstPort		    1
+		    }
+		    Line {
+		    ZOrder		    23
+		    SrcBlock		    "Product5"
+		    SrcPort		    1
+		    DstBlock		    "Sum2"
+		    DstPort		    2
+		    }
+		    Line {
+		    ZOrder		    24
+		    SrcBlock		    "Goto3"
+		    SrcPort		    1
+		    DstBlock		    "Product5"
+		    DstPort		    2
+		    }
+		    Line {
+		    ZOrder		    25
+		    SrcBlock		    "HPMods"
+		    SrcPort		    1
+		    DstBlock		    "Demux"
+		    DstPort		    1
+		    }
+		    Line {
+		    ZOrder		    26
+		    SrcBlock		    "Demux"
+		    SrcPort		    1
+		    DstBlock		    "Goto4"
+		    DstPort		    1
+		    }
+		    Line {
+		    ZOrder		    27
+		    SrcBlock		    "Demux"
+		    SrcPort		    2
+		    DstBlock		    "Goto5"
+		    DstPort		    1
+		    }
+		    Line {
+		    ZOrder		    28
+		    SrcBlock		    "Demux"
+		    SrcPort		    3
+		    DstBlock		    "Goto6"
+		    DstPort		    1
+		    }
+		  }
+		}
+		Block {
+		  BlockType		  Outport
+		  Name			  "CustBldsCharOut"
+		  SID			  "1293:443"
+		  Position		  [1145, 1158, 1175, 1172]
+		  ZOrder		  41
+		  ForegroundColor	  "blue"
+		  IconDisplay		  "Port number"
+		  PortDimensions	  "length(C_CBD_M)*5"
+		}
+		Block {
+		  BlockType		  Outport
+		  Name			  "FBldsCharOut"
+		  SID			  "1293:444"
+		  Position		  [1145, 1418, 1175, 1432]
+		  ZOrder		  42
+		  ForegroundColor	  "blue"
+		  Port			  "2"
+		  IconDisplay		  "Port number"
+		  PortDimensions	  "length(C_FBD_M)*5"
+		}
+		Block {
+		  BlockType		  Outport
+		  Name			  "GasPthCharOut"
+		  SID			  "1293:32"
+		  Position		  [1140, 98, 1170, 112]
+		  ZOrder		  5
+		  ForegroundColor	  "blue"
+		  Port			  "3"
+		  IconDisplay		  "Port number"
+		}
+		Block {
+		  BlockType		  Outport
+		  Name			  "NErr"
+		  SID			  "1293:353"
+		  Position		  [1140, 218, 1170, 232]
+		  ZOrder		  38
+		  ForegroundColor	  "green"
+		  Port			  "4"
+		  IconDisplay		  "Port number"
+		}
+		Block {
+		  BlockType		  Outport
+		  Name			  "TrqOut"
+		  SID			  "1293:36"
+		  Position		  [1140, 188, 1170, 202]
+		  ZOrder		  18
+		  ForegroundColor	  "[1.000000, 0.333333, 0.498039]"
+		  Port			  "5"
+		  IconDisplay		  "Port number"
+		}
+		Block {
+		  BlockType		  Outport
+		  Name			  "C_Data"
+		  SID			  "1293:37"
+		  Position		  [1165, 503, 1195, 517]
+		  ZOrder		  19
+		  Port			  "6"
+		  IconDisplay		  "Port number"
+		}
+		Line {
+		  Name			  "EffHPMod"
+		  ZOrder		  1
+		  Labels		  [1, 1]
+		  SrcBlock		  "Demux2"
+		  SrcPort		  3
+		  DstBlock		  "Bus Creator1"
+		  DstPort		  25
+		}
+		Line {
+		  Name			  "PRHPMod"
+		  ZOrder		  2
+		  Labels		  [1, 1]
+		  SrcBlock		  "Demux2"
+		  SrcPort		  2
+		  DstBlock		  "Bus Creator1"
+		  DstPort		  24
+		}
+		Line {
+		  Name			  "WHPMod"
+		  ZOrder		  3
+		  Labels		  [1, 1]
+		  SrcBlock		  "Demux2"
+		  SrcPort		  1
+		  DstBlock		  "Bus Creator1"
+		  DstPort		  23
+		}
+		Line {
+		  ZOrder		  4
+		  SrcBlock		  "Goto7"
+		  SrcPort		  1
+		  DstBlock		  "Demux2"
+		  DstPort		  1
+		}
+		Line {
+		  ZOrder		  5
+		  SrcBlock		  "HP_Mods"
+		  SrcPort		  1
+		  Points		  [9, 0]
+		  Branch {
+		    ZOrder		    6
+		    DstBlock		    "scalarMod"
+		    DstPort		    2
+		  }
+		  Branch {
+		    ZOrder		    7
+		    Points		    [0, 20]
+		    DstBlock		    "Goto5"
+		    DstPort		    1
+		  }
+		}
+		Line {
+		  ZOrder		  8
+		  SrcBlock		  "Goto4"
+		  SrcPort		  1
+		  DstBlock		  "scalarMod"
+		  DstPort		  1
+		}
+		Line {
+		  ZOrder		  9
+		  SrcBlock		  "Constant1"
+		  SrcPort		  1
+		  DstBlock		  "scalarMod"
+		  DstPort		  5
+		}
+		Line {
+		  ZOrder		  10
+		  SrcBlock		  "Constant4"
+		  SrcPort		  1
+		  DstBlock		  "scalarMod"
+		  DstPort		  4
+		}
+		Line {
+		  ZOrder		  11
+		  SrcBlock		  "Constant2"
+		  SrcPort		  1
+		  DstBlock		  "scalarMod"
+		  DstPort		  3
+		}
+		Line {
+		  ZOrder		  12
+		  SrcBlock		  "Goto3"
+		  SrcPort		  1
+		  Points		  [45, 0]
+		  DstBlock		  "Scalar_To_Workspace"
+		  DstPort		  enable
+		}
+		Line {
+		  ZOrder		  13
+		  SrcBlock		  "Relational Operator1"
+		  SrcPort		  1
+		  DstBlock		  "Goto2"
+		  DstPort		  1
+		}
+		Line {
+		  ZOrder		  14
+		  SrcBlock		  "ScalarOutputEnable3"
+		  SrcPort		  1
+		  DstBlock		  "Relational Operator1"
+		  DstPort		  1
+		}
+		Line {
+		  ZOrder		  15
+		  SrcBlock		  "ScalarOutputEnable2"
+		  SrcPort		  1
+		  DstBlock		  "Relational Operator1"
+		  DstPort		  2
+		}
+		Line {
+		  Name			  "Alpha"
+		  ZOrder		  16
+		  Labels		  [1, 1]
+		  SrcBlock		  "Alpha"
+		  SrcPort		  1
+		  DstBlock		  "Bus Creator"
+		  DstPort		  8
+		}
+		Line {
+		  Name			  "s_C_Nc"
+		  ZOrder		  17
+		  Labels		  [1, 0]
+		  SrcBlock		  "Constant"
+		  SrcPort		  1
+		  DstBlock		  "Bus Creator"
+		  DstPort		  9
+		}
+		Line {
+		  Name			  "s_C_PR"
+		  ZOrder		  18
+		  Labels		  [1, 0]
+		  SrcBlock		  "scalarMod"
+		  SrcPort		  2
+		  DstBlock		  "Bus Creator"
+		  DstPort		  11
+		}
+		Line {
+		  Name			  "s_C_Wc"
+		  ZOrder		  19
+		  Labels		  [1, 1]
+		  SrcBlock		  "scalarMod"
+		  SrcPort		  1
+		  DstBlock		  "Bus Creator"
+		  DstPort		  10
+		}
+		Line {
+		  Name			  "s_C_Eff"
+		  ZOrder		  20
+		  Labels		  [1, 1]
+		  SrcBlock		  "scalarMod"
+		  SrcPort		  3
+		  DstBlock		  "Bus Creator"
+		  DstPort		  12
+		}
+		Line {
+		  Name			  "BlkNm"
+		  ZOrder		  21
+		  Labels		  [1, 1]
+		  SrcBlock		  "Block Name from Mask"
+		  SrcPort		  1
+		  DstBlock		  "Bus Creator1"
+		  DstPort		  22
+		}
+		Line {
+		  Name			  "Nmech"
+		  ZOrder		  22
+		  Labels		  [1, 1]
+		  SrcBlock		  "Goto1"
+		  SrcPort		  1
+		  DstBlock		  "Bus Creator1"
+		  DstPort		  21
+		}
+		Line {
+		  Name			  "Test"
+		  ZOrder		  23
+		  Labels		  [-1, 0]
+		  SrcBlock		  "Demux"
+		  SrcPort		  27
+		  DstBlock		  "Bus Creator1"
+		  DstPort		  20
+		}
+		Line {
+		  Name			  "SPRMap"
+		  ZOrder		  24
+		  Labels		  [-1, 0]
+		  SrcBlock		  "Demux"
+		  SrcPort		  26
+		  DstBlock		  "Bus Creator1"
+		  DstPort		  19
+		}
+		Line {
+		  Name			  "SMMap"
+		  ZOrder		  25
+		  Labels		  [-1, 0]
+		  SrcBlock		  "Demux"
+		  SrcPort		  25
+		  DstBlock		  "Bus Creator1"
+		  DstPort		  18
+		}
+		Line {
+		  Name			  "PRMap"
+		  ZOrder		  26
+		  Labels		  [0, 0]
+		  SrcBlock		  "Demux"
+		  SrcPort		  18
+		  DstBlock		  "Bus Creator1"
+		  DstPort		  11
+		}
+		Line {
+		  Name			  "PR"
+		  ZOrder		  27
+		  Labels		  [0, 0]
+		  SrcBlock		  "Demux"
+		  SrcPort		  15
+		  DstBlock		  "Bus Creator1"
+		  DstPort		  8
+		}
+		Line {
+		  Name			  "WcMap"
+		  ZOrder		  28
+		  Labels		  [0, 0]
+		  SrcBlock		  "Demux"
+		  SrcPort		  17
+		  DstBlock		  "Bus Creator1"
+		  DstPort		  10
+		}
+		Line {
+		  Name			  "EffMap"
+		  ZOrder		  29
+		  Labels		  [0, 0]
+		  SrcBlock		  "Demux"
+		  SrcPort		  19
+		  DstBlock		  "Bus Creator1"
+		  DstPort		  12
+		}
+		Line {
+		  Name			  "Pwrout"
+		  ZOrder		  30
+		  Labels		  [0, 0]
+		  SrcBlock		  "Demux"
+		  SrcPort		  24
+		  DstBlock		  "Bus Creator1"
+		  DstPort		  17
+		}
+		Line {
+		  Name			  "NcMap"
+		  ZOrder		  31
+		  Labels		  [1, 1]
+		  SrcBlock		  "Demux"
+		  SrcPort		  16
+		  DstBlock		  "Bus Creator1"
+		  DstPort		  9
+		}
+		Line {
+		  Name			  "SurgePR"
+		  ZOrder		  32
+		  Labels		  [0, 0]
+		  SrcBlock		  "Demux"
+		  SrcPort		  20
+		  DstBlock		  "Bus Creator1"
+		  DstPort		  13
+		}
+		Line {
+		  Name			  "Wbleeds"
+		  ZOrder		  33
+		  Labels		  [0, 0]
+		  SrcBlock		  "Demux"
+		  SrcPort		  21
+		  DstBlock		  "Bus Creator1"
+		  DstPort		  14
+		}
+		Line {
+		  Name			  "Pwrb4bleed"
+		  ZOrder		  34
+		  Labels		  [0, 0]
+		  SrcBlock		  "Demux"
+		  SrcPort		  22
+		  DstBlock		  "Bus Creator1"
+		  DstPort		  15
+		}
+		Line {
+		  Name			  "PwrBld"
+		  ZOrder		  35
+		  Labels		  [0, 0]
+		  SrcBlock		  "Demux"
+		  SrcPort		  23
+		  DstBlock		  "Bus Creator1"
+		  DstPort		  16
+		}
+		Line {
+		  Name			  "Nc"
+		  ZOrder		  36
+		  Labels		  [1, 1]
+		  SrcBlock		  "Demux"
+		  SrcPort		  14
+		  DstBlock		  "Bus Creator1"
+		  DstPort		  7
+		}
+		Line {
+		  Name			  "s_C_Eff"
+		  ZOrder		  37
+		  SrcBlock		  "Demux"
+		  SrcPort		  12
+		  Points		  [23, 0]
+		  Branch {
+		    ZOrder		    38
+		    Labels		    [1, 1]
+		    DstBlock		    "Bus Creator1"
+		    DstPort		    5
+		  }
+		  Branch {
+		    ZOrder		    39
+		    Points		    [0, 660]
+		    DstBlock		    "Scalar_To_Workspace"
+		    DstPort		    4
+		  }
+		}
+		Line {
+		  Name			  "s_C_PR"
+		  ZOrder		  40
+		  SrcBlock		  "Demux"
+		  SrcPort		  11
+		  Points		  [33, 0]
+		  Branch {
+		    ZOrder		    41
+		    Labels		    [1, 1]
+		    DstBlock		    "Bus Creator1"
+		    DstPort		    4
+		  }
+		  Branch {
+		    ZOrder		    42
+		    Points		    [0, 680]
+		    DstBlock		    "Scalar_To_Workspace"
+		    DstPort		    3
+		  }
+		}
+		Line {
+		  Name			  "s_C_Wc"
+		  ZOrder		  43
+		  SrcBlock		  "Demux"
+		  SrcPort		  10
+		  Points		  [41, 0]
+		  Branch {
+		    ZOrder		    44
+		    Labels		    [1, 1]
+		    DstBlock		    "Bus Creator1"
+		    DstPort		    3
+		  }
+		  Branch {
+		    ZOrder		    45
+		    Points		    [0, 700]
+		    DstBlock		    "Scalar_To_Workspace"
+		    DstPort		    2
+		  }
+		}
+		Line {
+		  Name			  "s_C_Nc"
+		  ZOrder		  46
+		  SrcBlock		  "Demux"
+		  SrcPort		  9
+		  Points		  [49, 0]
+		  Branch {
+		    ZOrder		    47
+		    Labels		    [1, 1]
+		    DstBlock		    "Bus Creator1"
+		    DstPort		    2
+		  }
+		  Branch {
+		    ZOrder		    48
+		    Points		    [0, 720]
+		    DstBlock		    "Scalar_To_Workspace"
+		    DstPort		    1
+		  }
+		}
+		Line {
+		  ZOrder		  49
+		  SrcBlock		  "Bus Creator1"
+		  SrcPort		  1
+		  Points		  [5, 0; 0, -105]
+		  DstBlock		  "C_Data"
+		  DstPort		  1
+		}
+		Line {
+		  Name			  "SMavail"
+		  ZOrder		  50
+		  Labels		  [1, 1]
+		  SrcBlock		  "Demux"
+		  SrcPort		  8
+		  DstBlock		  "Bus Creator1"
+		  DstPort		  1
+		}
+		Line {
+		  Name			  "Compressor enthalpy; ht[BTU/lbm]"
+		  ZOrder		  51
+		  Labels		  [1, 0]
+		  SrcBlock		  "Demux1"
+		  SrcPort		  2
+		  DstBlock		  "Bus Creator"
+		  DstPort		  2
+		}
+		Line {
+		  Name			  "FractionalBleedFlowCharacteristics"
+		  ZOrder		  52
+		  Labels		  [1, 1]
+		  SrcBlock		  "Compressor"
+		  SrcPort		  3
+		  DstBlock		  "FBldsCharOut"
+		  DstPort		  1
+		}
+		Line {
+		  Name			  "CustomerBleedCharacteristics"
+		  ZOrder		  53
+		  Labels		  [1, 1]
+		  SrcBlock		  "Compressor"
+		  SrcPort		  2
+		  DstBlock		  "CustBldsCharOut"
+		  DstPort		  1
+		}
+		Line {
+		  ZOrder		  54
+		  SrcBlock		  "Fractional Bleed Demand Vector"
+		  SrcPort		  1
+		  DstBlock		  "Compressor"
+		  DstPort		  3
+		}
+		Line {
+		  ZOrder		  55
+		  SrcBlock		  "Customer or flow based Bleed Demand Vector"
+		  SrcPort		  1
+		  DstBlock		  "Compressor"
+		  DstPort		  2
+		}
+		Line {
+		  Name			  "NErr"
+		  ZOrder		  56
+		  Labels		  [-1, 0]
+		  SrcBlock		  "Demux"
+		  SrcPort		  7
+		  DstBlock		  "NErr"
+		  DstPort		  1
+		}
+		Line {
+		  Name			  "Compressor Theoretical Gas Flow In; WIn[pps]"
+		  ZOrder		  57
+		  Labels		  [1, 0]
+		  SrcBlock		  "Demux1"
+		  SrcPort		  1
+		  DstBlock		  "Bus Creator"
+		  DstPort		  1
+		}
+		Line {
+		  Name			  "Compressor Combusted Fuel to Air Ratio"
+		  ZOrder		  58
+		  Labels		  [0, 0]
+		  SrcBlock		  "GasPthCharIn"
+		  SrcPort		  1
+		  DstBlock		  "Demux1"
+		  DstPort		  1
+		}
+		Line {
+		  ZOrder		  59
+		  SrcBlock		  "Bus Creator2"
+		  SrcPort		  1
+		  DstBlock		  "GasPthCharOut"
+		  DstPort		  1
+		}
+		Line {
+		  Name			  "ht"
+		  ZOrder		  60
+		  Labels		  [-1, 0]
+		  SrcBlock		  "Demux"
+		  SrcPort		  2
+		  DstBlock		  "Bus Creator2"
+		  DstPort		  2
+		}
+		Line {
+		  Name			  "Wcin"
+		  ZOrder		  61
+		  Labels		  [1, 1]
+		  SrcBlock		  "Demux"
+		  SrcPort		  13
+		  DstBlock		  "Bus Creator1"
+		  DstPort		  6
+		}
+		Line {
+		  Name			  "Compressor map R-line (Rline)"
+		  ZOrder		  62
+		  Labels		  [1, 0]
+		  SrcBlock		  "Rline"
+		  SrcPort		  1
+		  DstBlock		  "Bus Creator"
+		  DstPort		  7
+		}
+		Line {
+		  Name			  "Compressor Combusted Fuel to Air Ratio; FARcIn[frac]"
+		  ZOrder		  63
+		  Labels		  [1, 0]
+		  SrcBlock		  "Demux1"
+		  SrcPort		  5
+		  DstBlock		  "Bus Creator"
+		  DstPort		  5
+		}
+		Line {
+		  Name			  "Compressor Total Temperature; TtIn[degR]"
+		  ZOrder		  64
+		  Labels		  [1, 0]
+		  SrcBlock		  "Demux1"
+		  SrcPort		  3
+		  DstBlock		  "Bus Creator"
+		  DstPort		  3
+		}
+		Line {
+		  ZOrder		  65
+		  SrcBlock		  "Compressor"
+		  SrcPort		  1
+		  Points		  [12, 0; 0, -470]
+		  DstBlock		  "Demux"
+		  DstPort		  1
+		}
+		Line {
+		  Name			  "W"
+		  ZOrder		  66
+		  Labels		  [-1, 0]
+		  SrcBlock		  "Demux"
+		  SrcPort		  1
+		  DstBlock		  "Bus Creator2"
+		  DstPort		  1
+		}
+		Line {
+		  Name			  "FAR"
+		  ZOrder		  67
+		  Labels		  [-1, 0]
+		  SrcBlock		  "Demux"
+		  SrcPort		  5
+		  DstBlock		  "Bus Creator2"
+		  DstPort		  5
+		}
+		Line {
+		  Name			  "Tt"
+		  ZOrder		  68
+		  Labels		  [-1, 0]
+		  SrcBlock		  "Demux"
+		  SrcPort		  3
+		  DstBlock		  "Bus Creator2"
+		  DstPort		  3
+		}
+		Line {
+		  Name			  "Pt"
+		  ZOrder		  69
+		  Labels		  [-1, 0]
+		  SrcBlock		  "Demux"
+		  SrcPort		  4
+		  DstBlock		  "Bus Creator2"
+		  DstPort		  4
+		}
+		Line {
+		  ZOrder		  70
+		  SrcBlock		  "Bus Creator"
+		  SrcPort		  1
+		  DstBlock		  "Compressor"
+		  DstPort		  1
+		}
+		Line {
+		  Name			  "Trq"
+		  ZOrder		  71
+		  Labels		  [-1, 0]
+		  SrcBlock		  "Demux"
+		  SrcPort		  6
+		  DstBlock		  "TrqOut"
+		  DstPort		  1
+		}
+		Line {
+		  Name			  "Compressor Mechanical Shaft Speed; Nmech[rpm]"
+		  ZOrder		  72
+		  Labels		  [1, 0]
+		  SrcBlock		  "Nmech"
+		  SrcPort		  1
+		  Points		  [333, 0]
+		  Branch {
+		    ZOrder		    73
+		    DstBlock		    "Bus Creator"
+		    DstPort		    6
+		  }
+		  Branch {
+		    ZOrder		    74
+		    Points		    [0, 15]
+		    DstBlock		    "Goto"
+		    DstPort		    1
+		  }
+		}
+		Line {
+		  Name			  "Compressor Total Pressure; PtIn[psia]"
+		  ZOrder		  75
+		  Labels		  [1, 0]
+		  SrcBlock		  "Demux1"
+		  SrcPort		  4
+		  DstBlock		  "Bus Creator"
+		  DstPort		  4
+		}
+	      }
+	    }
+	    Block {
 	      BlockType		      Demux
 	      Name		      "Demux"
 	      SID		      "559"
@@ -3909,8 +6463,9 @@ Model {
 	      Name		      "HPC"
 	      SID		      "9"
 	      Ports		      [4, 6]
-	      Position		      [195, 655, 350, 800]
+	      Position		      [120, 835, 275, 980]
 	      ZOrder		      342
+	      Commented		      "on"
 	      LibraryVersion	      "1.544"
 	      SourceBlock	      "Lib_Turbo_Compressor_TMATS/Compressor"
 	      SourceType	      "T-MATS: Compressor Library Block"
@@ -4081,7 +6636,7 @@ Model {
 	      BlockType		      From
 	      Name		      "HPC_Rline1"
 	      SID		      "105"
-	      Position		      [105, 704, 175, 716]
+	      Position		      [105, 694, 175, 706]
 	      ZOrder		      623
 	      ForegroundColor	      "darkGreen"
 	      ShowName		      off
@@ -4208,7 +6763,7 @@ Model {
 	      BlockType		      From
 	      Name		      "HPTNmech1"
 	      SID		      "129"
-	      Position		      [105, 738, 155, 752]
+	      Position		      [105, 783, 155, 797]
 	      ZOrder		      647
 	      ForegroundColor	      "red"
 	      ShowName		      off
@@ -4262,7 +6817,7 @@ Model {
 	      BlockType		      From
 	      Name		      "HPTNmech5"
 	      SID		      "1277"
-	      Position		      [95, 773, 145, 787]
+	      Position		      [60, 753, 145, 767]
 	      ZOrder		      1916
 	      ForegroundColor	      "red"
 	      ShowName		      off
@@ -4277,6 +6832,26 @@ Model {
 	      ForegroundColor	      "red"
 	      ShowName		      off
 	      GotoTag		      "HPC_Scalars"
+	    }
+	    Block {
+	      BlockType		      From
+	      Name		      "HPTNmech7"
+	      SID		      "1298"
+	      Position		      [60, 723, 145, 737]
+	      ZOrder		      1922
+	      ForegroundColor	      "red"
+	      ShowName		      off
+	      GotoTag		      "alpha"
+	    }
+	    Block {
+	      BlockType		      Goto
+	      Name		      "HPTNmech8"
+	      SID		      "1300"
+	      Position		      [325, 333, 410, 347]
+	      ZOrder		      1924
+	      ForegroundColor	      "red"
+	      ShowName		      off
+	      GotoTag		      "alpha"
 	    }
 	    Block {
 	      BlockType		      From
@@ -4988,11 +7563,11 @@ Model {
 	      DstPort		      1
 	    }
 	    Line {
-	      ZOrder		      95
+	      ZOrder		      363
 	      SrcBlock		      "HPTNmech1"
 	      SrcPort		      1
-	      DstBlock		      "HPC"
-	      DstPort		      3
+	      DstBlock		      "CompressorVG"
+	      DstPort		      5
 	    }
 	    Line {
 	      ZOrder		      92
@@ -5037,24 +7612,24 @@ Model {
 	      DstPort		      1
 	    }
 	    Line {
-	      ZOrder		      77
+	      ZOrder		      364
 	      SrcBlock		      "HPC_Rline1"
 	      SrcPort		      1
-	      DstBlock		      "HPC"
+	      DstBlock		      "CompressorVG"
 	      DstPort		      2
 	    }
 	    Line {
-	      ZOrder		      74
-	      SrcBlock		      "HPC"
+	      ZOrder		      357
+	      SrcBlock		      "CompressorVG"
 	      SrcPort		      4
 	      DstBlock		      "HPC_NErr1"
 	      DstPort		      1
 	    }
 	    Line {
-	      ZOrder		      103
+	      ZOrder		      365
 	      SrcBlock		      "FlwIn"
 	      SrcPort		      1
-	      DstBlock		      "HPC"
+	      DstBlock		      "CompressorVG"
 	      DstPort		      1
 	    }
 	    Line {
@@ -5096,22 +7671,22 @@ Model {
 	      DstPort		      1
 	    }
 	    Line {
-	      ZOrder		      76
-	      SrcBlock		      "HPC"
+	      ZOrder		      361
+	      SrcBlock		      "CompressorVG"
 	      SrcPort		      1
 	      DstBlock		      "HPC_term2"
 	      DstPort		      1
 	    }
 	    Line {
-	      ZOrder		      256
-	      SrcBlock		      "HPC"
+	      ZOrder		      360
+	      SrcBlock		      "CompressorVG"
 	      SrcPort		      6
 	      DstBlock		      "Pamb6"
 	      DstPort		      1
 	    }
 	    Line {
-	      ZOrder		      73
-	      SrcBlock		      "HPC"
+	      ZOrder		      359
+	      SrcBlock		      "CompressorVG"
 	      SrcPort		      5
 	      DstBlock		      "HPC_TrqOut1"
 	      DstPort		      1
@@ -5124,8 +7699,8 @@ Model {
 	      DstPort		      1
 	    }
 	    Line {
-	      ZOrder		      9
-	      SrcBlock		      "HPC"
+	      ZOrder		      358
+	      SrcBlock		      "CompressorVG"
 	      SrcPort		      3
 	      Points		      [44, 0]
 	      Branch {
@@ -5266,10 +7841,10 @@ Model {
 	      DstPort		      10
 	    }
 	    Line {
-	      ZOrder		      75
-	      SrcBlock		      "HPC"
+	      ZOrder		      366
+	      SrcBlock		      "CompressorVG"
 	      SrcPort		      2
-	      Points		      [41, 0; 0, -95]
+	      Points		      [34, 0; 0, -95]
 	      DstBlock		      "Demux"
 	      DstPort		      1
 	    }
@@ -5377,10 +7952,10 @@ Model {
 	      DstPort		      1
 	    }
 	    Line {
-	      ZOrder		      354
+	      ZOrder		      362
 	      SrcBlock		      "HPTNmech5"
 	      SrcPort		      1
-	      DstBlock		      "HPC"
+	      DstBlock		      "CompressorVG"
 	      DstPort		      4
 	    }
 	    Line {
@@ -5388,6 +7963,20 @@ Model {
 	      SrcBlock		      "HPC_Scalars"
 	      SrcPort		      1
 	      DstBlock		      "HPTNmech6"
+	      DstPort		      1
+	    }
+	    Line {
+	      ZOrder		      419
+	      SrcBlock		      "HPTNmech7"
+	      SrcPort		      1
+	      DstBlock		      "CompressorVG"
+	      DstPort		      3
+	    }
+	    Line {
+	      ZOrder		      420
+	      SrcBlock		      "alpha"
+	      SrcPort		      1
+	      DstBlock		      "HPTNmech8"
 	      DstPort		      1
 	    }
 	    Annotation {
@@ -5477,11 +8066,11 @@ Model {
 	  BlockType		  Demux
 	  Name			  "Demux2"
 	  SID			  "535"
-	  Ports			  [1, 12]
-	  Position		  [165, 826, 170, 1119]
+	  Ports			  [1, 13]
+	  Position		  [165, 823, 170, 1147]
 	  ZOrder		  811
 	  ShowName		  off
-	  Outputs		  "12"
+	  Outputs		  "13"
 	  DisplayOption		  "bar"
 	  Port {
 	    PortNumber		    7
@@ -8673,7 +11262,7 @@ Model {
 	      RequestExecContextInheritance off
 	      Object {
 		$PropName		"MaskObject"
-		$ObjectID		31
+		$ObjectID		108
 		$ClassName		"Simulink.Mask"
 		Type			"T-MATS: Duct Library Block"
 		Description		"This block simulates the performance of a duct using basic fluid dynamic equations and properties.\n"
@@ -8682,21 +11271,21 @@ Model {
 		  Type			  "Simulink.MaskParameter"
 		  Dimension		  3
 		  Object {
-		    $ObjectID		    32
+		    $ObjectID		    109
 		    Type		    "edit"
 		    Name		    "dP_M"
 		    Prompt		    "dP_M - Delta Pressure [frac lost]"
 		    Value		    "MWS.Duct.D2"
 		  }
 		  Object {
-		    $ObjectID		    33
+		    $ObjectID		    110
 		    Type		    "edit"
 		    Name		    "MNdes_M"
 		    Prompt		    "MNdes_M - Mach Number Design"
 		    Value		    "MWS.Duct.MNdes2"
 		  }
 		  Object {
-		    $ObjectID		    34
+		    $ObjectID		    111
 		    Type		    "edit"
 		    Name		    "Ath_M"
 		    Prompt		    "Ath_M - Throat Area [in2]"
@@ -9225,7 +11814,7 @@ Model {
 	      RequestExecContextInheritance off
 	      Object {
 		$PropName		"MaskObject"
-		$ObjectID		35
+		$ObjectID		112
 		$ClassName		"Simulink.Mask"
 		Type			"T-MATS: Duct Library Block"
 		Description		"This block simulates the performance of a duct using basic fluid dynamic equations and properties.\n"
@@ -9234,21 +11823,21 @@ Model {
 		  Type			  "Simulink.MaskParameter"
 		  Dimension		  3
 		  Object {
-		    $ObjectID		    36
+		    $ObjectID		    113
 		    Type		    "edit"
 		    Name		    "dP_M"
 		    Prompt		    "dP_M - Delta Pressure [frac lost]"
 		    Value		    "MWS.Duct.D25"
 		  }
 		  Object {
-		    $ObjectID		    37
+		    $ObjectID		    114
 		    Type		    "edit"
 		    Name		    "MNdes_M"
 		    Prompt		    "MNdes_M - Mach Number Design"
 		    Value		    "MWS.Duct.MNdes25"
 		  }
 		  Object {
-		    $ObjectID		    38
+		    $ObjectID		    115
 		    Type		    "edit"
 		    Name		    "Ath_M"
 		    Prompt		    "Ath_M - Throat Area [in2]"
@@ -10493,7 +13082,7 @@ Model {
 	  BlockType		  From
 	  Name			  "HPTNmech14"
 	  SID			  "1279"
-	  Position		  [580, 378, 655, 392]
+	  Position		  [580, 353, 655, 367]
 	  ZOrder		  1859
 	  ForegroundColor	  "red"
 	  ShowName		  off
@@ -10531,6 +13120,16 @@ Model {
 	}
 	Block {
 	  BlockType		  From
+	  Name			  "HPTNmech18"
+	  SID			  "1302"
+	  Position		  [580, 373, 655, 387]
+	  ZOrder		  1867
+	  ForegroundColor	  "red"
+	  ShowName		  off
+	  GotoTag		  "alpha"
+	}
+	Block {
+	  BlockType		  From
 	  Name			  "HPTNmech2"
 	  SID			  "211"
 	  Position		  [895, 333, 970, 347]
@@ -10538,6 +13137,16 @@ Model {
 	  ForegroundColor	  "red"
 	  ShowName		  off
 	  GotoTag		  "LP_Nmech"
+	}
+	Block {
+	  BlockType		  Goto
+	  Name			  "HPTNmech20"
+	  SID			  "1305"
+	  Position		  [205, 1128, 280, 1142]
+	  ZOrder		  1870
+	  ForegroundColor	  "red"
+	  ShowName		  off
+	  GotoTag		  "alpha"
 	}
 	Block {
 	  BlockType		  Goto
@@ -10563,7 +13172,7 @@ Model {
 	  BlockType		  From
 	  Name			  "HPTNmech5"
 	  SID			  "225"
-	  Position		  [580, 353, 655, 367]
+	  Position		  [580, 333, 655, 347]
 	  ZOrder		  703
 	  ForegroundColor	  "red"
 	  ShowName		  off
@@ -10646,7 +13255,7 @@ Model {
 	  BlockType		  From
 	  Name			  "LPC_NErrD10"
 	  SID			  "241"
-	  Position		  [600, 304, 655, 316]
+	  Position		  [600, 294, 655, 306]
 	  ZOrder		  719
 	  ForegroundColor	  "darkGreen"
 	  ShowName		  off
@@ -10656,7 +13265,7 @@ Model {
 	  BlockType		  From
 	  Name			  "LPC_NErrD11"
 	  SID			  "242"
-	  Position		  [600, 329, 655, 341]
+	  Position		  [590, 314, 645, 326]
 	  ZOrder		  720
 	  ForegroundColor	  "darkGreen"
 	  ShowName		  off
@@ -11443,7 +14052,7 @@ Model {
 	  BlockType		  Outport
 	  Name			  "Eng_Out"
 	  SID			  "540"
-	  Position		  [1275, 1268, 1305, 1282]
+	  Position		  [1320, 1268, 1350, 1282]
 	  ZOrder		  815
 	  IconDisplay		  "Port number"
 	}
@@ -11544,7 +14153,7 @@ Model {
 	  ZOrder		  130
 	  SrcBlock		  "FrontEng"
 	  SrcPort		  2
-	  Points		  [100, 0; 0, -10]
+	  Points		  [100, 0; 0, -15]
 	  DstBlock		  "Core"
 	  DstPort		  2
 	}
@@ -12178,13 +14787,6 @@ Model {
 	  DstPort		  5
 	}
 	Line {
-	  ZOrder		  1056
-	  SrcBlock		  "EngData"
-	  SrcPort		  1
-	  DstBlock		  "Eng_Out"
-	  DstPort		  1
-	}
-	Line {
 	  ZOrder		  1065
 	  SrcBlock		  "Pamb29"
 	  SrcPort		  1
@@ -12345,6 +14947,27 @@ Model {
 	  DstBlock		  "Mux5"
 	  DstPort		  3
 	}
+	Line {
+	  ZOrder		  1199
+	  SrcBlock		  "EngData"
+	  SrcPort		  1
+	  DstBlock		  "Eng_Out"
+	  DstPort		  1
+	}
+	Line {
+	  ZOrder		  1200
+	  SrcBlock		  "HPTNmech18"
+	  SrcPort		  1
+	  DstBlock		  "Core"
+	  DstPort		  7
+	}
+	Line {
+	  ZOrder		  1201
+	  SrcBlock		  "Demux2"
+	  SrcPort		  13
+	  DstBlock		  "HPTNmech20"
+	  DstPort		  1
+	}
 	Annotation {
 	  SID			  "192"
 	  Name			  "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n<html"
@@ -12480,7 +15103,7 @@ Model {
       BlockType		      Outport
       Name		      "Eng_Out"
       SID		      "550"
-      Position		      [350, 203, 380, 217]
+      Position		      [375, 203, 405, 217]
       ZOrder		      818
       IconDisplay	      "Port number"
       OutDataTypeStr	      "Bus: Eng_Bus"
